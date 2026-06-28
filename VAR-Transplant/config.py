@@ -71,8 +71,6 @@ def parse_arg():
     args.world_size = int(os.environ["WORLD_SIZE"])
     args.batch_size = round(args.global_batch_size/args.world_size)
     args.workers = min(max(0, args.workers), args.batch_size)
-    args.ms_token_size = tuple(map(int, args.ms_patch_size.replace('-', '_').split('_')))
-    args.importance = tuple(map(int, args.importance.replace('-', '_').split('_')))
     args.init_checkpoint_dir = args.checkpoint_dir
 
     if args.dataset_name == "ImageNet":

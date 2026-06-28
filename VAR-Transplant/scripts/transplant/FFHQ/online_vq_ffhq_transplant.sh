@@ -1,17 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=online_pq
-#SBATCH --account=aip-rudner
-#SBATCH --partition=gpubase_h100_b2,gpubase_h100_b3,gpubase_h100_b4,gpubase_h100_b5
-#SBATCH --nodes=1
-#SBATCH --mem=50gb
-#SBATCH --cpus-per-task 10
-#SBATCH --time=12:00:00
-#SBATCH --gres=gpu:h100:2
-#SBATCH --output /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/FFHQ/online_pq.out
-#SBATCH --error /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/FFHQ/online_pq.err
-
-#!/bin/bash
-#SBATCH --job-name=bsq_ffhq_transplant
+#SBATCH --job-name=online_vq_ffhq_transplant
 #SBATCH --account=aip-rudner
 #SBATCH --partition=gpubase_h100_b2,gpubase_h100_b3,gpubase_h100_b4,gpubase_h100_b5
 #SBATCH --nodes=1
@@ -19,8 +7,8 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:h100:2
-#SBATCH --output /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Transplant/FFHQ/bsq_ffhq_transplant.out
-#SBATCH --error /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Transplant/FFHQ/bsq_ffhq_transplant.err
+#SBATCH --output /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Transplant/FFHQ/online_vq_ffhq_transplant.out
+#SBATCH --error /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Transplant/FFHQ/online_vq_ffhq_transplant.err
 
 module load gcc opencv/4.8.1
 source /home/sunset/environment/VQ-Tokenizer/bin/activate
