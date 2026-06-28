@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=online_pq
+#SBATCH --job-name=mmd_pq
 #SBATCH --account=aip-rudner
 #SBATCH --partition=gpubase_h100_b2,gpubase_h100_b3,gpubase_h100_b4,gpubase_h100_b5
 #SBATCH --nodes=1
@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:h100:2
-#SBATCH --output /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/ImageNet/online_pq.out
-#SBATCH --error /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/ImageNet/online_pq.err
+#SBATCH --output /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/FFHQ/mmd_pq.out
+#SBATCH --error /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/FFHQ/mmd_pq.err
 
 #!/bin/bash
 #SBATCH --job-name=bsq_ffhq_transplant
@@ -24,4 +24,4 @@
 
 module load gcc opencv/4.8.1
 source /home/sunset/environment/VQ-Tokenizer/bin/activate
-CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13586 train_PQ_transplant.py --VQ=online_vq --dataset_name=ImageNet --global_batch_size=64 --codebook_size 256  --codebook_dim=8 --pq=2 --stage=transplant --alpha=1.0 --beta=1.0 --gamma=0.0
+CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13585 train_PQ_transplant.py --VQ=mmd_vq --dataset_name=FFHQ --global_batch_size=64 --codebook_size 256  --codebook_dim=8 --pq=2 --stage=transplant --alpha=1.0 --beta=0.2 --gamma=0.5

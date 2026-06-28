@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:h100:2
-#SBATCH --output /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/ImageNet/online_pq.out
-#SBATCH --error /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/ImageNet/online_pq.err
+#SBATCH --output /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/FFHQ/online_pq.out
+#SBATCH --error /project/6105494/sunset/VQ-Projects/VQ-Transplant/slurm/Transplant/FFHQ/online_pq.err
 
 #!/bin/bash
 #SBATCH --job-name=bsq_ffhq_transplant
@@ -24,4 +24,4 @@
 
 module load gcc opencv/4.8.1
 source /home/sunset/environment/VQ-Tokenizer/bin/activate
-CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13593 train_VQ_transplant.py --VQ=online_vq --dataset_name=ImageNet --global_batch_size=64 --codebook_size 256  --codebook_dim=8 --pq=2 --stage=transplant --alpha=1.0 --beta=1.0 --gamma=0.0
+CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13586 train_PQ_transplant.py --VQ=online_vq --dataset_name=FFHQ --global_batch_size=64 --codebook_size 256  --codebook_dim=8 --pq=2 --stage=transplant --alpha=1.0 --beta=1.0 --gamma=0.0
