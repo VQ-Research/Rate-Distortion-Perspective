@@ -171,22 +171,3 @@ def eval_reconstruction_epoch(args, model, epoch):
 
     if args.dataset_name == "ImageNet":
         create_npz_from_sample_folder(reconstruction_path)
-
-
-def generate_input_images(args):
-    val_dataloader, len_val_set = load_dataset(args, batch_size=16)
-    input_name = '{}'.format(args.dataset_name)
-    input_path = os.path.join("/projects/yuanai/projects/VQ-Transplant3/reconstruction", input_name)
-    os.makedirs(input_path, exist_ok=True)
-    
-    total = 0
-    for idx, (x, _) in enumerate(val_dataloader):
-        x = x.cuda()
-        with torch.no_grad():
-            input_samples = torch.clamp(127.5 * x + 128.0, 0, 255).permute(0, 2, 3, 1).to("cpu", dtype=torch.uint8).numpy()
-            
-            # Save samples to disk as individual .png files
-            for i, sample in enumerate(input_samples):
-                index = i + total
-                Image.fromarray(sample).save(f"{input_path}/{index:06d}.png")
-            total += 16
