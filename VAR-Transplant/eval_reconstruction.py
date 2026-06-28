@@ -73,7 +73,7 @@ def eval_reconstruction(args, model):
     val_dataloader, len_val_set = load_dataset(args, batch_size=16)
     if args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "mmd_vq" or args.VQ == "online_vq" or args.VQ == "ema_vq": 
         if args.pq == 1:
-            reconstruction_name = '{}_{}_{}_{}_{}'.format(args.VQ, args.stage, args.codebook_size, args.chunks, args.use_multiscale)
+            reconstruction_name = '{}_{}_{}_{}'.format(args.VQ, args.stage, args.codebook_size, args.use_multiscale)
         else:
             reconstruction_name = '{}_{}_{}'.format(args.VQ, args.stage, args.pq)
     elif args.VQ == 'bsq' or args.VQ == 'fsq' or args.VQ ==  'lfq':
@@ -124,7 +124,7 @@ def eval_reconstruction_epoch(args, model, epoch):
     val_dataloader, len_val_set = load_dataset(args, batch_size=16)
     if args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "mmd_vq" or args.VQ == "online_vq" or args.VQ == "ema_vq": 
         if args.pq == 1:
-            reconstruction_name = '{}_{}_{}_{}_{}_{}'.format(args.VQ, args.stage, args.codebook_size, args.chunks, args.use_multiscale, epoch)
+            reconstruction_name = '{}_{}_{}_{}_{}'.format(args.VQ, args.stage, args.codebook_size, args.use_multiscale, epoch)
         else:
             reconstruction_name = '{}_{}_{}_{}'.format(args.VQ, args.stage, args.pq, epoch)
     elif args.VQ == 'bsq' or args.VQ == 'fsq' or args.VQ ==  'lfq':

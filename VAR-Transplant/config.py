@@ -26,15 +26,11 @@ def parse_arg():
     parser.add_argument('--channels', default=3, type=int, metavar='N', help='the channels of images')
     
     ### Model Configuration
-    parser.add_argument('--ms_patch_size', default="1_2_3_4_5_6_8_10_13_16", type=str, help='multi-scale patch size.')
-    parser.add_argument('--importance', default="1_1_1_2_2_2_3_3_5_5", type=str, help='importance of multi-scale multi-scale VQ.')
-    parser.add_argument('--max_patch_size', default=16, type=int, help='the maximum patch size.')
     parser.add_argument('--codebook_size', default=4096, type=int, help='the size of codebook.')
     parser.add_argument('--codebook_dim', default=16, type=int, help='the dimension of codebook vectors for pq and vq.')
     parser.add_argument('--project_dim', default=16, type=int, help='the dimension of after projector in fsq, bsq, and lfq.')
     parser.add_argument('--pq', default=1, type=int, help='the modules of product quantizer.', choices=[1, 2])
     parser.add_argument('--L', default=4, type=int, help='finite discrete values for each dimension.', choices=[2, 3, 4, 5, 6, 8])
-    parser.add_argument('--chunks', default=2, type=int, help='chunks for latent features to increase the number of visual tokens.', choices=[1, 2, 4, 8])
 
     ### Loss Configuration
     parser.add_argument('--alpha', type=float, default=1.0, help="transplant stage: the hyperparameter of code commit loss.")
@@ -118,9 +114,9 @@ def parse_arg():
     if args.VQ == "original_ldm":
         args.model_pre = 'model_'
     elif args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
-        args.model_pre = 'model_{}_{}_{}_{}'.format(args.codebook_size, args.codebook_dim, args.chunks, args.pq)
+        args.model_pre = 'model_{}_{}_{}_{}'.format(args.codebook_size, args.codebook_dim, args.pq)
     else:
-        args.model_pre = 'model_{}_{}_{}'.format(args.project_dim, args.chunks, args.L)
+        args.model_pre = 'model_{}_{}_{}'.format(args.project_dim, args.L)
     
     ### loss prefix 
     if args.VQ == "original_ldm":

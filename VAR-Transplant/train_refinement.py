@@ -90,26 +90,9 @@ def main_worker(args):
     vq_model.module.projector_in.eval()
 
     if args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
-        if args.chunks == 1:
-            vq_model.module.quantizer1.eval()
-        elif args.chunks == 2: 
-            vq_model.module.quantizer1.eval()  
-            vq_model.module.quantizer2.eval()
-        elif args.chunks == 4: 
-            vq_model.module.quantizer1.eval()  
-            vq_model.module.quantizer2.eval()
-            vq_model.module.quantizer3.eval()  
-            vq_model.module.quantizer4.eval()
-        elif args.chunks == 8: 
-            vq_model.module.quantizer1.eval()  
-            vq_model.module.quantizer2.eval()
-            vq_model.module.quantizer3.eval()  
-            vq_model.module.quantizer4.eval()
-            vq_model.module.quantizer5.eval()  
-            vq_model.module.quantizer6.eval()
-            vq_model.module.quantizer7.eval()  
-            vq_model.module.quantizer8.eval()
-
+        vq_model.module.quantizer1.eval()  
+        vq_model.module.quantizer2.eval()
+        
     vq_loss = DDP(vq_loss.to(device), device_ids=[args.gpu])
     vq_loss.train()
     vq_loss.module.perceptual_loss.eval()

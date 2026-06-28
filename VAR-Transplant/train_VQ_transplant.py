@@ -66,15 +66,7 @@ def main_worker(args):
     vq_model = vq_model.to(device)    
     vq_model = nn.SyncBatchNorm.convert_sync_batchnorm(vq_model)
 
-    if args.chunks == 1:
-        codebook = list(vq_model.quantizer1.embedding.parameters())
-    elif args.chunks == 2: 
-        codebook = list(vq_model.quantizer1.embedding.parameters()) + list(vq_model.quantizer2.embedding.parameters()) 
-    elif args.chunks == 4: 
-        codebook = list(vq_model.quantizer1.embedding.parameters()) + list(vq_model.quantizer2.embedding.parameters()) + list(vq_model.quantizer3.embedding.parameters()) + list(vq_model.quantizer4.embedding.parameters()) 
-    elif args.chunks == 8: 
-        codebook = list(vq_model.quantizer1.embedding.parameters()) + list(vq_model.quantizer2.embedding.parameters()) + list(vq_model.quantizer3.embedding.parameters()) + list(vq_model.quantizer4.embedding.parameters()) + list(vq_model.quantizer5.embedding.parameters()) + list(vq_model.quantizer6.embedding.parameters()) + list(vq_model.quantizer7.embedding.parameters()) + list(vq_model.quantizer8.embedding.parameters())
-    
+    codebook = list(vq_model.quantizer1.embedding.parameters()) + list(vq_model.quantizer2.embedding.parameters()) 
     if args.VQ == "wasserstein_vq" or args.VQ == "mmd_vq":
         code_para = codebook
         model_para = list(vq_model.projector_out.parameters()) + list(vq_model.projector_in.parameters()) 
