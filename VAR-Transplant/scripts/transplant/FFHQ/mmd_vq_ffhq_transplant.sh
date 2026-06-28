@@ -3,7 +3,7 @@
 #SBATCH --account=aip-rudner
 #SBATCH --partition=gpubase_h100_b2,gpubase_h100_b3,gpubase_h100_b4,gpubase_h100_b5
 #SBATCH --nodes=1
-#SBATCH --mem=200gb
+#SBATCH --mem=80gb
 #SBATCH --cpus-per-task 10
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:h100:2
