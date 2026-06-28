@@ -94,7 +94,6 @@ class VQModel(nn.Module):
                 param.requires_grad = True
             for param in self.decoder.parameters():
                 param.requires_grad = False
-
             for param in self.quantizer1.parameters():
                 param.requires_grad = True 
             for param in self.quantizer2.parameters():
@@ -119,7 +118,6 @@ class VQModel(nn.Module):
             projector_out_dict = {k: v for k, v in pretrain_dict.items() if k.startswith('projector_out.')}
             quantizer1_dict = {k: v for k, v in pretrain_dict.items() if k.startswith('quantizer1.')}
             quantizer2_dict = {k: v for k, v in pretrain_dict.items() if k.startswith('quantizer2.')}
-            
 
             encoder_dict = {k.replace('encoder.', '', 1): v for k, v in encoder_dict.items()}
             decoder_dict = {k.replace('decoder.', '', 1): v for k, v in decoder_dict.items()}
@@ -155,7 +153,6 @@ class VQModel(nn.Module):
                 param.requires_grad = False
             for param in self.quantizer2.parameters():
                 param.requires_grad = False
-            
             self.encoder.eval()
             self.quant_conv.eval()
             self.projector_in.eval()
@@ -174,6 +171,7 @@ class VQModel(nn.Module):
         z_q_2, vq_loss_2, utilization_2, perplexity_2 = self.quantizer2(z_p_2)
         z_q = torch.cat((z_q_1, z_q_2), dim=1)
         vq_loss = (vq_loss_1 + vq_loss_2) * 0.5
+        
         utilization = (utilization_1 + utilization_2) * 0.5
         perplexity = (perplexity_1 + perplexity_2) * 0.5
         

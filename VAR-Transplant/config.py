@@ -41,8 +41,7 @@ def parse_arg():
     parser.add_argument('--disc_cr_loss_weight', type=float, default=4.0, help='refinement stage: disc_cr_loss_weight')
 
     ### Training Configuration
-    parser.add_argument('--VQ', default='wasserstein_vq', help='various vq approaches.', choices=['wasserstein_vq', 'vanilla_vq', 'ema_vq', 'online_vq', 'mmd_vq', 'original_ldm', 'bsq', 'fsq', 'lfq'])
-    parser.add_argument('--use_multiscale', action='store_true', help='False: employ single VQ; True: use multiscale-VQ as original VAR.')
+    parser.add_argument('--VQ', default='wasserstein_vq', help='various vq approaches.', choices=['wasserstein_vq', 'vanilla_vq', 'ema_vq', 'online_vq', 'mmd_vq', 'bsq', 'fsq', 'lfq'])
     parser.add_argument('--transplant_epochs', type=int, default=2, help="training epochs, 5 epochs for transplant stage.")
     parser.add_argument('--refinement_epochs', type=int, default=5, help="training epochs, 5 epochs for refinement stage.")
     parser.add_argument('--eval_epochs', type=int, default=1, help="epochs for each eval, 1 epochs for ImageNet.")
@@ -54,13 +53,13 @@ def parse_arg():
     parser.add_argument('--weight_decay', help='weight decay for optimizer', type=float, default=0.00001)
     parser.add_argument('--stage', default='transplant', help='there are two stages: transplant and refinement.', choices=['transplant', 'refinement'])
 
-    ##vector:/project/6105494/sunset/VQ-Projects/VQ-Transplant
-    parser.add_argument('--checkpoint_dir', default="/project/6105494/sunset/VQ-Projects/VQ-Transplant/checkpoint/", type=str, help='the directory of checkpoint.')
-    parser.add_argument('--results_dir', default="/project/6105494/sunset/VQ-Projects/VQ-Transplant/results/", type=str, help='the directory of results.')
-    parser.add_argument('--saver_dir', default="/project/6105494/sunset/VQ-Projects/VQ-Transplant/saver/", type=str, help='the directory of saver.')
-    parser.add_argument('--reconstruction_dir', default="/project/6105494/sunset/VQ-Projects/VQ-Transplant/reconstruction/", type=str, help='the directory of saver.')
-    parser.add_argument('--yaml_dir', default="/project/6105494/sunset/VQ-Projects/VQ-Transplant/yaml/", type=str, help='the directory of saver.')
-    parser.add_argument('--pretrained_tokenizer', default="/project/6105494/sunset/VQ-Projects/VQ-Transplant/pretrained_tokenizer/vae_ch160v4096z32.pth", type=str, help='the directory of var checkpoint.')
+    ##vector:/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/checkpoint
+    parser.add_argument('--checkpoint_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/checkpoint/", type=str, help='the directory of checkpoint.')
+    parser.add_argument('--results_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/results/", type=str, help='the directory of results.')
+    parser.add_argument('--saver_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/saver/", type=str, help='the directory of saver.')
+    parser.add_argument('--reconstruction_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/", type=str, help='the directory of saver.')
+    parser.add_argument('--yaml_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/yaml/", type=str, help='the directory of saver.')
+    parser.add_argument('--pretrained_tokenizer', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/pretrained_tokenizer/vae_ch160v4096z32.pth", type=str, help='the directory of var checkpoint.')
     parser.add_argument('--checkpoint_name', default="", type=str, help='the directory of saved checkpoint name for the refinement stage.')
     parser.add_argument('--nnodes', default=-1, type=int, help='node rank for distributed training.')
     parser.add_argument('--node_rank', default=-1, type=int, help='node rank for distributed training.')
@@ -98,10 +97,6 @@ def parse_arg():
         args.transplant_epochs = 2
         args.refinement_epochs = 5
         args.eval_epochs = 1
-    elif args.dataset_name == "Churches":
-        args.transplant_epochs = 20
-        args.refinement_epochs = 20
-        args.eval_epochs = 4
     else:
         args.transplant_epochs = 30
         args.refinement_epochs = 30
@@ -111,28 +106,19 @@ def parse_arg():
     args.data_pre = '{}'.format(args.dataset_name)
 
     ### model prefix 
-    if args.VQ == "original_ldm":
-        args.model_pre = 'model_'
-    elif args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
-        args.model_pre = 'model_{}_{}_{}_{}'.format(args.codebook_size, args.codebook_dim, args.pq)
+    if args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
+        args.model_pre = 'model_{}_{}_{}'.format(args.codebook_size, args.codebook_dim, args.pq)
     else:
-        args.model_pre = 'model_{}_{}_{}'.format(args.project_dim, args.L)
+        args.model_pre = 'model_{}_{}'.format(args.project_dim, args.L)
     
     ### loss prefix 
-    if args.VQ == "original_ldm":
-        args.loss_pre = 'loss_'
-    elif args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
+    if args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
         args.loss_pre = 'loss_{}_{}_{}_{}'.format(args.alpha, args.beta, args.gamma, args.disc_weight)
     else:
         args.loss_pre = 'loss_{}_{}'.format(args.beta, args.disc_weight)
 
     ### train prefix 
-    if args.VQ == "original_ldm":
-        args.training_pre = '{}'.format(args.VQ)
-    elif args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
-        args.training_pre = '{}_{}_{}'.format(args.VQ, args.stage, args.use_multiscale)
-    else:
-        args.training_pre = '{}_{}'.format(args.VQ, args.stage)
+    args.training_pre = '{}_{}'.format(args.VQ, args.stage)
     args.saver_name_pre = args.training_pre + '_' + args.data_pre + '_' + args.model_pre + '_' + args.loss_pre
 
     dict_args = vars(args)

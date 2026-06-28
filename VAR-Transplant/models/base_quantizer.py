@@ -45,10 +45,8 @@ class Queue(nn.Module):
         self.args = args
         self.codebook_dim = args.codebook_dim
         self.codebook_size = args.codebook_size
-        if args.use_multiscale == False:
-            self.queue_size = 32768
-        else:
-            self.queue_size = 87040
+        self.queue_size = 32768
+        
         self.register_buffer("queue", torch.randn(self.queue_size, self.codebook_dim)/self.args.codebook_size)
         self.register_buffer("queue_ptr", torch.zeros(1, dtype=torch.long))
 

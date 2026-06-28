@@ -18,7 +18,7 @@ class FSQ(nn.Module):
         self.codebook_size = self.L**self.D
 
         self.levels = [self.L for i in range(self.D)]
-        self.basis = torch.cumprod(tensor([1] + self.levels[:-1]), dim = 0, dtype = int32).cuda()
+        self.register_buffer("basis", torch.cumprod(torch.tensor([1] + self.levels[:-1], dtype=torch.int32), dim=0))
 
     def round_ste(self, z):
         """ round with straight through gradients. """
@@ -48,9 +48,7 @@ class FSQ(nn.Module):
 
         zhat = self.bound(z_flat)
         token = self.codes_to_indices(zhat)
-
         z_dec = zhat.view(z.shape).permute(0, 3, 1, 2).contiguous()
-        commit_loss = self.args.beta * F.mse_loss(z_dec.detach(), z_enc)
 
         histogram = token.bincount(minlength=self.codebook_size).float()
         handler = tdist.all_reduce(histogram, async_op=True)
@@ -61,7 +59,7 @@ class FSQ(nn.Module):
             
         avg_probs = histogram/histogram.sum(0)
         perplexity = torch.exp(-torch.sum(avg_probs * torch.log(avg_probs + 1e-10)))
-        loss = commit_loss
+        loss = torch.tensor(0.0, device=z_enc.device)
         return z_dec, loss, utilization, perplexity
 
     def collect_eval_info(self, z_enc):

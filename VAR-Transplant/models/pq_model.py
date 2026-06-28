@@ -185,7 +185,7 @@ class PQModel(nn.Module):
 
         utilization = (utilization_1 + utilization_2) * 0.5
         perplexity = (perplexity_1 + perplexity_2) * 0.5
-        return  transplant_loss, rec_loss, p_loss, quant_error, utilization, perplexity
+        return transplant_loss, rec_loss, p_loss, quant_error, utilization, perplexity
 
     def refinement(self, x):
         assert self.args.stage == "refinement"
