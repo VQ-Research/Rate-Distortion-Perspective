@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=online_vq_celeba_transplant
+#SBATCH --job-name=online_vq_celeba_refinement
 #SBATCH --account=aip-rudner
 #SBATCH --partition=gpubase_h100_b2,gpubase_h100_b3,gpubase_h100_b4,gpubase_h100_b5
 #SBATCH --nodes=1
@@ -7,9 +7,9 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:h100:2
-#SBATCH --output /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Transplant/CelebAHQ/online_vq_celeba_transplant.out
-#SBATCH --error /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Transplant/CelebAHQ/online_vq_celeba_transplant.err
+#SBATCH --output /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Refinement/CelebAHQ/online_vq_celeba_refinement.out
+#SBATCH --error /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/slurm/Refinement/CelebAHQ/online_vq_celeba_refinement.err
 
 module load gcc opencv/4.8.1
 source /home/sunset/environment/VQ-Tokenizer/bin/activate
-CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13593 train_VQ_transplant.py --VQ=online_vq --dataset_name=CelebAHQ --global_batch_size=64 --codebook_size=65536  --codebook_dim=16 --pq=1 --stage=transplant --alpha=1.0 --beta=1.0 --gamma=0.0
+CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=15593 train_refinement.py --VQ=online_vq --dataset_name=CelebAHQ --global_batch_size=64 --codebook_size=65536  --codebook_dim=16 --pq=1 --stage=refinement --alpha=1.0 --beta=1.0 --gamma=0.0
