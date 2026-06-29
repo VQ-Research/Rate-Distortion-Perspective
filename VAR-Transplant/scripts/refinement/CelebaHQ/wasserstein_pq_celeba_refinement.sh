@@ -12,4 +12,4 @@
 
 module load gcc opencv/4.8.1
 source /home/sunset/environment/VQ-Tokenizer/bin/activate
-CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=15588 train_refinement.py --VQ=wasserstein_vq --dataset_name=CelebAHQ --global_batch_size=64 --codebook_size=256  --codebook_dim=8 --pq=2 --stage=refinement --alpha=1.0 --beta=0.2 --gamma=0.5
+CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=15588 train_refinement.py --VQ=wasserstein_vq --dataset_name=CelebAHQ --global_batch_size=64 --codebook_size=256  --codebook_dim=8 --pq=2 --stage=refinement --alpha=1.0 --beta=0.2 --gamma=0.5 --checkpoint_name=checkpoint-wasserstein_vq_transplant_CelebAHQ_model_256_8_2_loss_1.0_0.2_0.5_0.4.pth.tar

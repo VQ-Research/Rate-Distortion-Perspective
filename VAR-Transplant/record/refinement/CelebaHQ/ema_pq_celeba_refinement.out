@@ -1,0 +1,76 @@
+dataset_dir: /project/6105494/shared/data/
+dataset_name: CelebAHQ
+global_batch_size: 64
+workers: 6
+resolution: 256
+channels: 3
+codebook_size: 256
+codebook_dim: 8
+project_dim: 16
+pq: 2
+L: 4
+alpha: 1.0
+beta: 1.0
+gamma: 0.0
+disc_weight: 0.4
+lecam_loss_weight: 0.001
+disc_cr_loss_weight: 4.0
+VQ: ema_vq
+transplant_epochs: 30
+refinement_epochs: 30
+eval_epochs: 5
+disc_epoch: 1
+lr_transplant: 0.0001
+lr_refinement: 1e-05
+dropout: 0.0
+seed: 3407
+weight_decay: 1e-05
+stage: refinement
+checkpoint_dir: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/checkpoint/Refinement/CelebAHQ
+results_dir: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/results/Refinement/CelebAHQ
+saver_dir: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/saver/Refinement/CelebAHQ
+reconstruction_dir: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ
+yaml_dir: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/yaml/Refinement/CelebAHQ
+pretrained_tokenizer: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/pretrained_tokenizer/vae_ch160v4096z32.pth
+checkpoint_name: checkpoint-ema_vq_transplant_CelebAHQ_model_256_8_2_loss_1.0_1.0_0.0_0.4.pth.tar
+nnodes: -1
+node_rank: -1
+local_rank: 0
+dist_url: tcp://224.66.41.62:23456
+dist_backend: nccl
+world_size: 2
+batch_size: 32
+init_checkpoint_dir: /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/checkpoint/
+data_pre: CelebAHQ
+model_pre: model_256_8_2
+loss_pre: loss_1.0_1.0_0.0_0.4
+training_pre: ema_vq_refinement
+saver_name_pre: ema_vq_refinement_CelebAHQ_model_256_8_2_loss_1.0_1.0_0.0_0.4
+| distributed init (rank 0): env://
+| distributed init (rank 1): env://
+VQ Model Parameters: 108761795
+loaded pretrained LPIPS loss from /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/code/models/cache/vgg.pth
+dataset name: CelebAHQ
+len train_set: 30000
+len val_set: 30000
+Start training...
+epoch:1, cur_lr:0.000010
+Train Epoch: [1/30] Iters:[10/468] gen_loss -0.0262, rec_loss 0.0098, lpips_loss 0.1325, g_loss -0.0721, disc_weight 0.4000, disc_adaptive_weight 2.8579, d_loss 2.6143, logits_real 0.0696, logits_fake 0.0704,
+Train Epoch: [1/30] Iters:[20/468] gen_loss 0.0153, rec_loss 0.0103, lpips_loss 0.1348, g_loss -0.0456, disc_weight 0.4000, disc_adaptive_weight 3.8378, d_loss 2.2804, logits_real 0.0710, logits_fake 0.0446,
+Train Epoch: [1/30] Iters:[30/468] gen_loss 0.0072, rec_loss 0.0108, lpips_loss 0.1354, g_loss -0.0473, disc_weight 0.4000, disc_adaptive_weight 3.5989, d_loss 2.0598, logits_real 0.0705, logits_fake 0.0479,
+Train Epoch: [1/30] Iters:[40/468] gen_loss 0.0250, rec_loss 0.0114, lpips_loss 0.1372, g_loss -0.0415, disc_weight 0.4000, disc_adaptive_weight 3.5145, d_loss 1.8898, logits_real 0.0705, logits_fake 0.0417,
+Train Epoch: [1/30] Iters:[50/468] gen_loss 0.0305, rec_loss 0.0124, lpips_loss 0.1391, g_loss -0.0394, disc_weight 0.4000, disc_adaptive_weight 3.5293, d_loss 1.7621, logits_real 0.0702, logits_fake 0.0387,
+Train Epoch: [1/30] Iters:[60/468] gen_loss 0.0474, rec_loss 0.0137, lpips_loss 0.1420, g_loss -0.0330, disc_weight 0.4000, disc_adaptive_weight 3.4766, d_loss 1.4674, logits_real 0.0694, logits_fake 0.0329,
+Train Epoch: [1/30] Iters:[70/468] gen_loss 0.0472, rec_loss 0.0151, lpips_loss 0.1436, g_loss -0.0373, disc_weight 0.4000, disc_adaptive_weight 3.0319, d_loss 1.2896, logits_real 0.0683, logits_fake 0.0370,
+Train Epoch: [1/30] Iters:[80/468] gen_loss 0.0580, rec_loss 0.0159, lpips_loss 0.1445, g_loss -0.0366, disc_weight 0.4000, disc_adaptive_weight 2.8821, d_loss 1.1634, logits_real 0.0670, logits_fake 0.0356,
+Train Epoch: [1/30] Iters:[90/468] gen_loss 0.0488, rec_loss 0.0169, lpips_loss 0.1449, g_loss -0.0420, disc_weight 0.4000, disc_adaptive_weight 2.7393, d_loss 1.0750, logits_real 0.0650, logits_fake 0.0410,
+Train Epoch: [1/30] Iters:[100/468] gen_loss 0.0451, rec_loss 0.0176, lpips_loss 0.1449, g_loss -0.0467, disc_weight 0.4000, disc_adaptive_weight 2.5061, d_loss 1.0015, logits_real 0.0633, logits_fake 0.0464,
+Train Epoch: [1/30] Iters:[110/468] gen_loss 0.0421, rec_loss 0.0179, lpips_loss 0.1443, g_loss -0.0496, disc_weight 0.4000, disc_adaptive_weight 2.4213, d_loss 0.9401, logits_real 0.0622, logits_fake 0.0490,
+Train Epoch: [1/30] Iters:[120/468] gen_loss 0.0379, rec_loss 0.0184, lpips_loss 0.1448, g_loss -0.0517, disc_weight 0.4000, disc_adaptive_weight 2.4205, d_loss 0.8903, logits_real 0.0605, logits_fake 0.0514,
+Train Epoch: [1/30] Iters:[130/468] gen_loss 0.0313, rec_loss 0.0193, lpips_loss 0.1461, g_loss -0.0535, disc_weight 0.4000, disc_adaptive_weight 2.5050, d_loss 0.8486, logits_real 0.0597, logits_fake 0.0531,
+Train Epoch: [1/30] Iters:[140/468] gen_loss 0.0226, rec_loss 0.0195, lpips_loss 0.1462, g_loss -0.0554, disc_weight 0.4000, disc_adaptive_weight 2.5760, d_loss 0.8098, logits_real 0.0593, logits_fake 0.0551,
+Train Epoch: [1/30] Iters:[150/468] gen_loss 0.0204, rec_loss 0.0194, lpips_loss 0.1458, g_loss -0.0571, disc_weight 0.4000, disc_adaptive_weight 2.5359, d_loss 0.7763, logits_real 0.0593, logits_fake 0.0568,
+Train Epoch: [1/30] Iters:[160/468] gen_loss 0.0162, rec_loss 0.0195, lpips_loss 0.1458, g_loss -0.0592, disc_weight 0.4000, disc_adaptive_weight 2.5317, d_loss 0.7490, logits_real 0.0590, logits_fake 0.0587,
+Train Epoch: [1/30] Iters:[170/468] gen_loss 0.0121, rec_loss 0.0189, lpips_loss 0.1448, g_loss -0.0619, disc_weight 0.4000, disc_adaptive_weight 2.4636, d_loss 0.7227, logits_real 0.0594, logits_fake 0.0612,
+Train Epoch: [1/30] Iters:[180/468] gen_loss 0.0117, rec_loss 0.0184, lpips_loss 0.1433, g_loss -0.0637, disc_weight 0.4000, disc_adaptive_weight 2.3643, d_loss 0.7000, logits_real 0.0598, logits_fake 0.0631,
+Train Epoch: [1/30] Iters:[190/468] gen_loss 0.0170, rec_loss 0.0184, lpips_loss 0.1436, g_loss -0.0645, disc_weight 0.4000, disc_adaptive_weight 2.2469, d_loss 0.6813, logits_real 0.0604, logits_fake 0.0640,
