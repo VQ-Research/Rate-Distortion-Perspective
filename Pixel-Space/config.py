@@ -15,52 +15,43 @@ from utils.misc import str2bool
 import ruamel.yaml as yaml
 
 def parse_arg():
-    parser = argparse.ArgumentParser(description='VQ-Transplant (double VQ/PQ/SQ system) based on VAR Discrete Tokenizer.') 
+    parser = argparse.ArgumentParser(description='VQ/PQ/SQ system based on Pixel Space.') 
 
     ### Dataset and Dataloader Configuration
     parser.add_argument('--dataset_dir', default="/datasets/", type=str, help='the directory of dataset') 
     parser.add_argument('--dataset_name', default='ImageNet', help='the name of dataset', choices=['ImageNet', 'FFHQ', 'CelebAHQ', 'Churches'])
-    parser.add_argument('--global_batch_size', type=int, default=128, help="the size of batch samples")
-    parser.add_argument('--workers', default=6, type=int, metavar='N', help='number of data loader workers')
+    parser.add_argument('--global_batch_size', type=int, default=16, help="the size of batch samples")
+    parser.add_argument('--workers', default=12, type=int, metavar='N', help='number of data loader workers')
     parser.add_argument('--resolution', type=int, choices=[256], default=256, help='resolution of train and test')
     parser.add_argument('--channels', default=3, type=int, metavar='N', help='the channels of images')
     
     ### Model Configuration
-    parser.add_argument('--codebook_size', default=4096, type=int, help='the size of codebook.')
+    parser.add_argument('--codebook_size', default=65536, type=int, help='the size of codebook.')
     parser.add_argument('--codebook_dim', default=16, type=int, help='the dimension of codebook vectors for pq and vq.')
     parser.add_argument('--project_dim', default=16, type=int, help='the dimension of after projector in fsq, bsq, and lfq.')
     parser.add_argument('--pq', default=1, type=int, help='the modules of product quantizer.', choices=[1, 2])
     parser.add_argument('--L', default=4, type=int, help='finite discrete values for each dimension.', choices=[2, 3, 4, 5, 6, 8])
 
     ### Loss Configuration
-    parser.add_argument('--alpha', type=float, default=1.0, help="transplant stage: the hyperparameter of code commit loss.")
-    parser.add_argument('--beta', type=float, default=1.0, help="transplant stage: the hyperparameter of feature commit loss.")
-    parser.add_argument('--gamma', type=float, default=0.5, help="transplant stage: wasserstein loss or mmd loss.")
-    parser.add_argument('--disc_weight', type=float, default=0.4, help="refinement stage: discriminator loss weight for gan training")
-    parser.add_argument('--lecam_loss_weight', type=float, default=0.001, help='refinement stage: lecam_loss_weight')
-    parser.add_argument('--disc_cr_loss_weight', type=float, default=4.0, help='refinement stage: disc_cr_loss_weight')
+    parser.add_argument('--alpha', type=float, default=1.0, help="the hyperparameter of code commit loss.")
+    parser.add_argument('--beta', type=float, default=1.0, help="the hyperparameter of feature commit loss.")
+    parser.add_argument('--gamma', type=float, default=0.5, help="wasserstein loss or mmd loss.")
 
     ### Training Configuration
     parser.add_argument('--VQ', default='wasserstein_vq', help='various vq approaches.', choices=['wasserstein_vq', 'vanilla_vq', 'ema_vq', 'online_vq', 'mmd_vq', 'bsq', 'fsq', 'lfq'])
-    parser.add_argument('--transplant_epochs', type=int, default=2, help="training epochs, 5 epochs for transplant stage.")
-    parser.add_argument('--refinement_epochs', type=int, default=5, help="training epochs, 5 epochs for refinement stage.")
+    parser.add_argument('--epochs', type=int, default=2, help="training epochs, 5 epochs for stage.")
     parser.add_argument('--eval_epochs', type=int, default=1, help="epochs for each eval, 1 epochs for ImageNet.")
-    parser.add_argument('--disc_epoch', type=int, default=1, help="training epochs, 5 epochs for refinement stage.")
-    parser.add_argument('--lr_transplant', default=1e-4, type=float, metavar='LR', help='initial learning rate for transplant stage.')
-    parser.add_argument('--lr_refinement', default=1e-5, type=float, metavar='LR', help='initial learning rate for refinement stage.')
+    parser.add_argument('--lr', default=1e-4, type=float, metavar='LR', help='initial learning rate for stage.')
     parser.add_argument('--dropout', help='dropout for the model', type=float, default=0.0)
     parser.add_argument('--seed', help='random seed', type=int, default=3407)
     parser.add_argument('--weight_decay', help='weight decay for optimizer', type=float, default=0.00001)
-    parser.add_argument('--stage', default='transplant', help='there are two stages: transplant and refinement.', choices=['transplant', 'refinement'])
 
-    ##vector:/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/checkpoint
-    parser.add_argument('--checkpoint_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/checkpoint/", type=str, help='the directory of checkpoint.')
-    parser.add_argument('--results_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/results/", type=str, help='the directory of results.')
-    parser.add_argument('--saver_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/saver/", type=str, help='the directory of saver.')
-    parser.add_argument('--reconstruction_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/", type=str, help='the directory of saver.')
-    parser.add_argument('--yaml_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/yaml/", type=str, help='the directory of saver.')
-    parser.add_argument('--pretrained_tokenizer', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/pretrained_tokenizer/vae_ch160v4096z32.pth", type=str, help='the directory of var checkpoint.')
-    parser.add_argument('--checkpoint_name', default="", type=str, help='the directory of saved checkpoint name for the refinement stage.')
+    ##vector:/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/checkpoint
+    parser.add_argument('--checkpoint_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/checkpoint/", type=str, help='the directory of checkpoint.')
+    parser.add_argument('--results_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/results/", type=str, help='the directory of results.')
+    parser.add_argument('--saver_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/saver/", type=str, help='the directory of saver.')
+    parser.add_argument('--reconstruction_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/", type=str, help='the directory of saver.')
+    parser.add_argument('--yaml_dir', default="/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/yaml/", type=str, help='the directory of saver.')
     parser.add_argument('--nnodes', default=-1, type=int, help='node rank for distributed training.')
     parser.add_argument('--node_rank', default=-1, type=int, help='node rank for distributed training.')
     parser.add_argument('--local-rank', default=-1, type=int, help='node rank for distributed training')
@@ -78,26 +69,17 @@ def parse_arg():
     else:
         args.dataset_dir = "/project/6105494/shared/data/"
 
-    if args.stage == "transplant":
-        args.checkpoint_dir = os.path.join(os.path.join(args.checkpoint_dir, "Transplant"), args.dataset_name)
-        args.results_dir = os.path.join(os.path.join(args.results_dir, "Transplant"), args.dataset_name)
-        args.saver_dir = os.path.join(os.path.join(args.saver_dir, "Transplant"), args.dataset_name)
-        args.reconstruction_dir = os.path.join(os.path.join(args.reconstruction_dir, "Transplant"), args.dataset_name)
-        args.yaml_dir = os.path.join(os.path.join(args.yaml_dir, "Transplant"), args.dataset_name) 
-    elif args.stage == "refinement":
-        args.checkpoint_dir = os.path.join(os.path.join(args.checkpoint_dir, "Refinement"), args.dataset_name)
-        args.results_dir = os.path.join(os.path.join(args.results_dir, "Refinement"), args.dataset_name)
-        args.saver_dir = os.path.join(os.path.join(args.saver_dir, "Refinement"), args.dataset_name)
-        args.reconstruction_dir = os.path.join(os.path.join(args.reconstruction_dir, "Refinement"), args.dataset_name)
-        args.yaml_dir = os.path.join(os.path.join(args.yaml_dir, "Refinement"), args.dataset_name) 
+    args.checkpoint_dir = os.path.join(args.checkpoint_dir, args.dataset_name)
+    args.results_dir = os.path.join(args.results_dir, args.dataset_name)
+    args.saver_dir = os.path.join(args.saver_dir, args.dataset_name)
+    args.reconstruction_dir = os.path.join(args.reconstruction_dir, args.dataset_name)
+    args.yaml_dir = os.path.join(args.yaml_dir, args.dataset_name)
 
     if args.dataset_name == "ImageNet":
-        args.transplant_epochs = 2
-        args.refinement_epochs = 5
+        args.epochs = 5
         args.eval_epochs = 1
     else:
-        args.transplant_epochs = 30
-        args.refinement_epochs = 30
+        args.epochs = 30
         args.eval_epochs = 5
 
     ### data prefix  
