@@ -40,26 +40,17 @@ def eval_one_epoch_vq(args, model, epoch, val_dataloader, len_val_set):
     ssim_metric = SSIM()
     lpips_metric = LPIPS()
 
-    if args.stage == "transplant":
-        ssim, psnr, lpips, rec_loss, quant_error, utilization, perplexity, total_num =  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
-        histogram_all_1: torch.Tensor = 0.0
-        histogram_all_2: torch.Tensor = 0.0
-    if args.stage == "refinement":
-        ssim, psnr, lpips, rec_loss, total_num = 0.0, 0.0, 0.0, 0.0, 0 
-    
+    ssim, psnr, lpips, rec_loss, utilization, perplexity, total_num =  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
+    histogram_all: torch.Tensor = 0.0
+
     for step, (x, _) in enumerate(val_dataloader):
         x = x.cuda(int(os.environ['LOCAL_RANK']), non_blocking=True)
         batch_size = x.size(0)
         total_num += batch_size
         with torch.no_grad():
-            if args.stage == "transplant":
-                x_rec, rec_loss_eval, quant_error_eval, histogram_eval_1, histogram_eval_2 = model.module.collect_eval_info_transplant(x)
-                histogram_all_1 += histogram_eval_1
-                histogram_all_2 += histogram_eval_2
-                info_pack = Pack(rec_loss=rec_loss_eval, quant_error=quant_error_eval)
-            else:
-                x_rec, rec_loss_eval = model.module.collect_eval_info_refinement(x)
-                info_pack = Pack(rec_loss=rec_loss_eval)
+            x_rec, rec_loss_eval, histogram_eval = model.module.collect_eval_info(x)
+            histogram_all += histogram_eval
+            info_pack = Pack(rec_loss=rec_loss_eval)
 
             x_norm = (x + 1.0)/2.0
             x_rec_norm = (x_rec + 1.0)/2.0
@@ -79,46 +70,20 @@ def eval_one_epoch_vq(args, model, epoch, val_dataloader, len_val_set):
             psnr += batch_psnr.item()
             lpips += batch_lpips.item()
             rec_loss += info_pack.rec_loss.item() * batch_size
-            if args.stage == "transplant":
-                quant_error += info_pack.quant_error.item() * batch_size
                 
     eval_psnr = psnr/len_val_set
     eval_ssim = ssim/len_val_set
     eval_lpips = lpips/len_val_set
     eval_rec_loss = rec_loss/total_num
-    if args.stage == "transplant":
-        eval_quant_error = quant_error/total_num
-        codebook_usage_counts_1 = (histogram_all_1 > 0).float().sum()
-        eval_utilization_1  = codebook_usage_counts_1.item() / args.codebook_size
-        avg_probs_1 = histogram_all_1/histogram_all_1.sum(0)
-        eval_perplexity_1 = torch.exp(-torch.sum(avg_probs_1 * torch.log(avg_probs_1 + 1e-10))).item()
-
-        codebook_usage_counts_2 = (histogram_all_2 > 0).float().sum()
-        eval_utilization_2  = codebook_usage_counts_2.item() / args.codebook_size
-        avg_probs_2 = histogram_all_2/histogram_all_2.sum(0)
-        eval_perplexity_2 = torch.exp(-torch.sum(avg_probs_2 * torch.log(avg_probs_2 + 1e-10))).item()
-
-        eval_utilization = 0.5 * (eval_utilization_1 + eval_utilization_2)
-        eval_perplexity = 0.5 * (eval_perplexity_1 + eval_perplexity_2)
+    codebook_usage_counts = (histogram_all > 0).float().sum()
+    eval_utilization  = codebook_usage_counts.item() / args.codebook_size
+    avg_probs = histogram_all/histogram_all.sum(0)
+    eval_perplexity = torch.exp(-torch.sum(avg_probs * torch.log(avg_probs + 1e-10))).item()
         
     model.train()
-    if args.stage == "transplant":
-        model.module.encoder.eval()
-        model.module.decoder.eval()
-        model.module.quant_conv.eval()
-        model.module.post_quant_conv.eval()
-        model.module.perceptual_loss.eval()
-    else:
-        model.module.encoder.eval()
-        model.module.quant_conv.eval()
-        model.module.projector_in.eval()
-        model.module.quantizer1.eval()  
-        model.module.quantizer2.eval()
-        
-    if args.stage == "transplant":
-        return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss, quant_error=eval_quant_error, utilization=eval_utilization, perplexity=eval_perplexity)
-    else:
-        return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss)
+    model.module.perceptual_loss.eval()
+    return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss, utilization=eval_utilization, perplexity=eval_perplexity)
+
 
 ## product_quantizer
 def eval_one_epoch_pq(args, model, epoch, val_dataloader, len_val_set):
@@ -128,26 +93,16 @@ def eval_one_epoch_pq(args, model, epoch, val_dataloader, len_val_set):
     lpips_metric = LPIPS()
     total_codebook_size = args.codebook_size * args.codebook_size
 
-    if args.stage == "transplant":
-        ssim, psnr, lpips, rec_loss, quant_error, utilization, perplexity, total_num =  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
-        histogram_all_1: torch.Tensor = 0.0
-        histogram_all_2: torch.Tensor = 0.0
-    if args.stage == "refinement":
-        ssim, psnr, lpips, rec_loss, total_num = 0.0, 0.0, 0.0, 0.0, 0 
-    
+    ssim, psnr, lpips, rec_loss, utilization, perplexity, total_num =  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
+    histogram_all: torch.Tensor = 0.0
     for step, (x, _) in enumerate(val_dataloader):
         x = x.cuda(int(os.environ['LOCAL_RANK']), non_blocking=True)
         batch_size = x.size(0)
         total_num += batch_size
         with torch.no_grad():
-            if args.stage == "transplant":
-                x_rec, rec_loss_eval, quant_error_eval, histogram_eval_1, histogram_eval_2 = model.module.collect_eval_info_transplant(x)
-                info_pack = Pack(rec_loss=rec_loss_eval, quant_error=quant_error_eval)
-                histogram_all_1 += histogram_eval_1
-                histogram_all_2 += histogram_eval_2
-            else:
-                x_rec, rec_loss_eval = model.module.collect_eval_info_refinement(x)
-                info_pack = Pack(rec_loss=rec_loss_eval)
+            x_rec, rec_loss_eval, histogram_eval = model.module.collect_eval_info(x)
+            histogram_all += histogram_eval
+            info_pack = Pack(rec_loss=rec_loss_eval)
 
             x_norm = (x + 1.0)/2.0
             x_rec_norm = (x_rec + 1.0)/2.0
@@ -167,46 +122,19 @@ def eval_one_epoch_pq(args, model, epoch, val_dataloader, len_val_set):
             psnr += batch_psnr.item()
             lpips += batch_lpips.item()
             rec_loss += info_pack.rec_loss.item() * batch_size
-            if args.stage == "transplant":
-                quant_error += info_pack.quant_error.item() * batch_size
                 
     eval_psnr = psnr/len_val_set
     eval_ssim = ssim/len_val_set
     eval_lpips = lpips/len_val_set
     eval_rec_loss = rec_loss/total_num
-    if args.stage == "transplant":
-        eval_quant_error = quant_error/total_num
-        codebook_usage_counts_1 = (histogram_all_1 > 0).float().sum()
-        eval_utilization_1  = codebook_usage_counts_1.item() / total_codebook_size
-        avg_probs_1 = histogram_all_1/histogram_all_1.sum(0)
-        eval_perplexity_1 = torch.exp(-torch.sum(avg_probs_1 * torch.log(avg_probs_1 + 1e-10))).item()
-
-        codebook_usage_counts_2 = (histogram_all_2 > 0).float().sum()
-        eval_utilization_2  = codebook_usage_counts_2.item() / total_codebook_size
-        avg_probs_2 = histogram_all_2/histogram_all_2.sum(0)
-        eval_perplexity_2 = torch.exp(-torch.sum(avg_probs_2 * torch.log(avg_probs_2 + 1e-10))).item()
-
-        eval_utilization = 0.5 * (eval_utilization_1 + eval_utilization_2)
-        eval_perplexity = 0.5 * (eval_perplexity_1 + eval_perplexity_2)
+    codebook_usage_counts = (histogram_all > 0).float().sum()
+    eval_utilization  = codebook_usage_counts.item() / total_codebook_size
+    avg_probs = histogram_all/histogram_all.sum(0)
+    eval_perplexity = torch.exp(-torch.sum(avg_probs * torch.log(avg_probs + 1e-10))).item()
 
     model.train()
-    if args.stage == "transplant":
-        model.module.encoder.eval()
-        model.module.decoder.eval()
-        model.module.quant_conv.eval()
-        model.module.post_quant_conv.eval()
-        model.module.perceptual_loss.eval()
-    else:
-        model.module.encoder.eval()
-        model.module.quant_conv.eval()
-        model.module.quantizer1.eval()
-        model.module.quantizer2.eval()
-        model.module.projector_in.eval()
-        
-    if args.stage == "transplant":
-        return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss, quant_error=eval_quant_error, utilization=eval_utilization, perplexity=eval_perplexity)
-    else:
-        return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss)
+    model.module.perceptual_loss.eval()
+    return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss, utilization=eval_utilization, perplexity=eval_perplexity)
 
 ## scalar_quantizer
 def eval_one_epoch_sq(args, model, epoch, val_dataloader, len_val_set):
@@ -216,26 +144,16 @@ def eval_one_epoch_sq(args, model, epoch, val_dataloader, len_val_set):
     lpips_metric = LPIPS()
     total_codebook_size = args.L ** args.project_dim
 
-    if args.stage == "transplant":
-        ssim, psnr, lpips, rec_loss, quant_error, utilization, perplexity, total_num =  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
-        histogram_all_1: torch.Tensor = 0.0
-        histogram_all_2: torch.Tensor = 0.0
-    if args.stage == "refinement":
-        ssim, psnr, lpips, rec_loss, total_num = 0.0, 0.0, 0.0, 0.0, 0 
-    
+    ssim, psnr, lpips, rec_loss, utilization, perplexity, total_num = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0
+    histogram_all: torch.Tensor = 0.0
     for step, (x, _) in enumerate(val_dataloader):
         x = x.cuda(int(os.environ['LOCAL_RANK']), non_blocking=True)
         batch_size = x.size(0)
         total_num += batch_size
         with torch.no_grad():
-            if args.stage == "transplant":
-                x_rec, rec_loss_eval, quant_error_eval, histogram_eval_1, histogram_eval_2 = model.module.collect_eval_info_transplant(x)
-                info_pack = Pack(rec_loss=rec_loss_eval, quant_error=quant_error_eval)
-                histogram_all_1 += histogram_eval_1
-                histogram_all_2 += histogram_eval_2
-            else:
-                x_rec, rec_loss_eval = model.module.collect_eval_info_refinement(x)
-                info_pack = Pack(rec_loss=rec_loss_eval)
+            x_rec, rec_loss_eval, histogram_eval = model.module.collect_eval_info(x)
+            histogram_all += histogram_eval
+            info_pack = Pack(rec_loss=rec_loss_eval)
 
             x_norm = (x + 1.0)/2.0
             x_rec_norm = (x_rec + 1.0)/2.0
@@ -255,41 +173,17 @@ def eval_one_epoch_sq(args, model, epoch, val_dataloader, len_val_set):
             psnr += batch_psnr.item()
             lpips += batch_lpips.item()
             rec_loss += info_pack.rec_loss.item() * batch_size
-            if args.stage == "transplant":
-                quant_error += info_pack.quant_error.item() * batch_size
                 
     eval_psnr = psnr/len_val_set
     eval_ssim = ssim/len_val_set
     eval_lpips = lpips/len_val_set
     eval_rec_loss = rec_loss/total_num
-    if args.stage == "transplant":
-        eval_quant_error = quant_error/total_num
-        codebook_usage_counts_1 = (histogram_all_1 > 0).float().sum()
-        eval_utilization_1  = codebook_usage_counts_1.item() / total_codebook_size
-        avg_probs_1 = histogram_all_1/histogram_all_1.sum(0)
-        eval_perplexity_1 = torch.exp(-torch.sum(avg_probs_1 * torch.log(avg_probs_1 + 1e-10))).item()
-
-        codebook_usage_counts_2 = (histogram_all_2 > 0).float().sum()
-        eval_utilization_2  = codebook_usage_counts_2.item() / total_codebook_size
-        avg_probs_2 = histogram_all_2/histogram_all_2.sum(0)
-        eval_perplexity_2 = torch.exp(-torch.sum(avg_probs_2 * torch.log(avg_probs_2 + 1e-10))).item()
-
-        eval_utilization = 0.5 * (eval_utilization_1 + eval_utilization_2)
-        eval_perplexity = 0.5 * (eval_perplexity_1 + eval_perplexity_2)
+    codebook_usage_counts = (histogram_all > 0).float().sum()
+    eval_utilization  = codebook_usage_counts.item() / total_codebook_size
+    avg_probs = histogram_all/histogram_all.sum(0)
+    eval_perplexity = torch.exp(-torch.sum(avg_probs * torch.log(avg_probs + 1e-10))).item()
 
     model.train()
-    if args.stage == "transplant":
-        model.module.encoder.eval()
-        model.module.decoder.eval()
-        model.module.quant_conv.eval()
-        model.module.post_quant_conv.eval()
-        model.module.perceptual_loss.eval()
-    else:
-        model.module.encoder.eval()
-        model.module.quant_conv.eval()
-        model.module.projector_in.eval()
-        
-    if args.stage == "transplant":
-        return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss, quant_error=eval_quant_error, utilization=eval_utilization, perplexity=eval_perplexity)
-    else:
-        return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss)
+    model.module.perceptual_loss.eval()
+    return Pack(psnr=eval_psnr, ssim=eval_ssim, lpips=eval_lpips, rec_loss=eval_rec_loss, utilization=eval_utilization, perplexity=eval_perplexity)
+    

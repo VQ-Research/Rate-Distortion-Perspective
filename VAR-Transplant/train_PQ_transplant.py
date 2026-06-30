@@ -98,7 +98,7 @@ def main_worker(args):
         start_time = time.time()
         for step, (x, _) in enumerate(train_dataloader):
             cur_iter = len(train_dataloader) * (epoch-1) + step
-            #lr = adjust_learning_rate(optimizer, cur_iter, total_steps, args.lr_transplant)
+            lr = adjust_learning_rate(optimizer, cur_iter, total_steps, args.lr_transplant)
             with torch.autocast(device_type='cuda', dtype=torch.float32):
                 x = x.to(device, non_blocking=True)
                 optimizer.zero_grad()

@@ -32,7 +32,6 @@ import config
 from utils.util import Logger, LossManager, Pack, adjust_learning_rate, save_checkpoint
 from data import dataloader
 from models.pq_model import PQModel
-from models.vq_loss import VQLoss
 from metric.metric import PSNR, LPIPS, SSIM
 from eval_tokenizer import eval_one_epoch_pq
 
@@ -57,55 +56,43 @@ def main_worker(args):
     torch.cuda.set_device(device)
 
     pq_model = PQModel(args)
-    total_para = 0
-    for p in pq_model.encoder.parameters():
-        total_para += p.numel()
-    for p in pq_model.decoder.parameters():
-        total_para += p.numel()
-    print("VQ Model Parameters:", total_para)
-    pq_model = pq_model.to(device)    
-    pq_model = nn.SyncBatchNorm.convert_sync_batchnorm(pq_model)
+    pq_model = pq_model.to(device)
 
     if args.VQ == "wasserstein_vq" or args.VQ == "mmd_vq":
-        code_para = list(pq_model.quantizer1.parameters()) + list(pq_model.quantizer2.parameters()) 
+        code_para = list(pq_model.quantizer.parameters())
         model_para = list(pq_model.projector_out.parameters()) + list(pq_model.projector_in.parameters()) 
         all_para = code_para + model_para
-        optimizer = torch.optim.AdamW([{'params': model_para}, {'params': code_para, 'lr': 0.0005}], lr=args.lr_transplant, betas=(0.9, 0.95), weight_decay=0.00001)
+        optimizer = torch.optim.AdamW([{'params': model_para}, {'params': code_para, 'lr': 0.0005}], lr=args.lr, betas=(0.9, 0.95), weight_decay=0.00001)
     elif args.VQ == "vanilla_vq" or args.VQ == "online_vq":
-        model_para = list(pq_model.quantizer1.parameters()) + list(pq_model.quantizer2.parameters()) + list(pq_model.projector_out.parameters()) + list(pq_model.projector_in.parameters()) 
-        optimizer = torch.optim.AdamW(model_para, lr=args.lr_transplant, betas=(0.9, 0.95), weight_decay=0.00001)
+        model_para = list(pq_model.quantizer.parameters()) + list(pq_model.projector_out.parameters()) + list(pq_model.projector_in.parameters()) 
+        optimizer = torch.optim.AdamW(model_para, lr=args.lr, betas=(0.9, 0.95), weight_decay=0.00001)
     elif args.VQ == "ema_vq":
         model_para = list(pq_model.projector_out.parameters()) + list(pq_model.projector_in.parameters()) 
-        optimizer = torch.optim.AdamW(model_para, lr=args.lr_transplant, betas=(0.9, 0.95), weight_decay=0.00001)
+        optimizer = torch.optim.AdamW(model_para, lr=args.lr, betas=(0.9, 0.95), weight_decay=0.00001)
 
     train_dataloader, val_dataloader, train_sampler, len_train_set, len_val_set = build_dataloader(args)
     pq_model = DDP(pq_model.to(device), device_ids=[args.gpu], find_unused_parameters=False)
     pq_model.train()
-    pq_model.module.encoder.eval()
-    pq_model.module.decoder.eval()
-    pq_model.module.quant_conv.eval()
-    pq_model.module.post_quant_conv.eval()
     pq_model.module.perceptual_loss.eval()
 
-    results_eval = {'epoch':[], 'psnr':[], 'ssim':[], 'lpips':[], 'rec_loss': [], 'quant_error': [], 'utilization': [], 'perplexity': []}
+    results_eval = {'epoch':[], 'psnr':[], 'ssim':[], 'lpips':[], 'rec_loss': [], 'utilization': [], 'perplexity': []}
     train_loss = LossManager()
     print("Start training...")
     start_epoch = 1 
-    total_steps = len(train_dataloader)*args.transplant_epochs
-    for epoch in range(start_epoch, args.transplant_epochs+1):
+    total_steps = len(train_dataloader) * args.epochs
+    for epoch in range(start_epoch, args.epochs+1):
         train_sampler.set_epoch(epoch)
         print("epoch:%d, cur_lr:%4f"%(epoch, optimizer.param_groups[0]["lr"]))
         start_time = time.time()
         for step, (x, _) in enumerate(train_dataloader):
             cur_iter = len(train_dataloader) * (epoch-1) + step
-            #lr = adjust_learning_rate(optimizer, cur_iter, total_steps, args.lr_transplant)
+            lr = adjust_learning_rate(optimizer, cur_iter, total_steps, args.lr)
             with torch.autocast(device_type='cuda', dtype=torch.float32):
                 x = x.to(device, non_blocking=True)
                 optimizer.zero_grad()
-
-                transplant_loss, rec_loss, p_loss, quant_error, utilization, perplexity = pq_model.module.transplant(x)
-                info_pack = Pack(transplant_loss=transplant_loss, rec_loss=rec_loss, p_loss=p_loss, quant_error=quant_error, utilization=utilization, perplexity=perplexity)
-                transplant_loss.backward()
+                loss, rec_loss, p_loss, utilization, perplexity = pq_model(x)
+                info_pack = Pack(loss=loss, rec_loss=rec_loss, p_loss=p_loss, utilization=utilization, perplexity=perplexity)
+                loss.backward()
                 if args.VQ == "wasserstein_vq":
                     has_nan = False            
                     for param in all_para:
@@ -126,7 +113,7 @@ def main_worker(args):
                     
             train_loss.add_loss(info_pack)
             if int(os.environ['LOCAL_RANK']) == 0 and (step+1) %10 ==0:
-                print(train_loss.pprint(window=50, prefix='Train Epoch: [{}/{}] Iters:[{}/{}]'.format(epoch, args.transplant_epochs, step+1, len(train_dataloader))))
+                print(train_loss.pprint(window=50, prefix='Train Epoch: [{}/{}] Iters:[{}/{}]'.format(epoch, args.epochs, step+1, len(train_dataloader))))
 
         train_loss.clear()
         if epoch % args.eval_epochs == 0 and int(os.environ['LOCAL_RANK']) == 0:
@@ -144,7 +131,6 @@ def main_worker(args):
                 results_eval['ssim'].append(results_pack.ssim)
                 results_eval['lpips'].append(results_pack.lpips)
                 results_eval['rec_loss'].append(results_pack.rec_loss)
-                results_eval['quant_error'].append(results_pack.quant_error)
                 results_eval['utilization'].append(results_pack.utilization)
                 results_eval['perplexity'].append(results_pack.perplexity)
                 
