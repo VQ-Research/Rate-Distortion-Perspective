@@ -15,7 +15,7 @@ from utils.misc import str2bool
 import ruamel.yaml as yaml
 
 def parse_arg():
-    parser = argparse.ArgumentParser(description='VQ/PQ/SQ system based on Pixel Space.') 
+    parser = argparse.ArgumentParser(description='VQ/PQ/SQ system based on Fair Pixel Space.') 
 
     ### Dataset and Dataloader Configuration
     parser.add_argument('--dataset_dir', default="/datasets/", type=str, help='the directory of dataset') 
@@ -39,9 +39,9 @@ def parse_arg():
 
     ### Training Configuration
     parser.add_argument('--VQ', default='wasserstein_vq', help='various vq approaches.', choices=['wasserstein_vq', 'vanilla_vq', 'ema_vq', 'online_vq', 'mmd_vq', 'bsq', 'fsq', 'lfq'])
-    parser.add_argument('--epochs', type=int, default=2, help="training epochs, 5 epochs for stage.")
+    parser.add_argument('--epochs', type=int, default=2, help="training epochs, 5 epochs.")
     parser.add_argument('--eval_epochs', type=int, default=1, help="epochs for each eval, 1 epochs for ImageNet.")
-    parser.add_argument('--lr', default=1e-4, type=float, metavar='LR', help='initial learning rate for stage.')
+    parser.add_argument('--lr', default=1e-4, type=float, metavar='LR', help='initial learning rate.')
     parser.add_argument('--dropout', help='dropout for the model', type=float, default=0.0)
     parser.add_argument('--seed', help='random seed', type=int, default=3407)
     parser.add_argument('--weight_decay', help='weight decay for optimizer', type=float, default=0.00001)
@@ -62,7 +62,6 @@ def parse_arg():
     args.world_size = int(os.environ["WORLD_SIZE"])
     args.batch_size = round(args.global_batch_size/args.world_size)
     args.workers = min(max(0, args.workers), args.batch_size)
-    args.init_checkpoint_dir = args.checkpoint_dir
 
     if args.dataset_name == "ImageNet":
         args.dataset_dir = "/datasets/"
@@ -93,12 +92,12 @@ def parse_arg():
     
     ### loss prefix 
     if args.VQ == "wasserstein_vq" or args.VQ == "vanilla_vq" or args.VQ == "ema_vq" or args.VQ == "online_vq" or args.VQ == "mmd_vq":
-        args.loss_pre = 'loss_{}_{}_{}_{}'.format(args.alpha, args.beta, args.gamma, args.disc_weight)
+        args.loss_pre = 'loss_{}_{}_{}'.format(args.alpha, args.beta, args.gamma)
     else:
-        args.loss_pre = 'loss_{}_{}'.format(args.beta, args.disc_weight)
+        args.loss_pre = 'loss_{}'.format(args.beta)
 
     ### train prefix 
-    args.training_pre = '{}_{}'.format(args.VQ, args.stage)
+    args.training_pre = '{}'.format(args.VQ)
     args.saver_name_pre = args.training_pre + '_' + args.data_pre + '_' + args.model_pre + '_' + args.loss_pre
 
     dict_args = vars(args)
