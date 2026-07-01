@@ -26,10 +26,10 @@ class PQModel(nn.Module):
                 nn.Conv2d(1024, 1024, kernel_size=3, padding=1),
                 Normalize(1024),
                 nn.SiLU(),
-                nn.Conv2d(1024, args.codebook_dim, kernel_size=3, padding=1),
+                nn.Conv2d(1024, args.pq * args.codebook_dim, kernel_size=3, padding=1),
             )
         self.projector_out = nn.Sequential(
-                nn.Conv2d(args.codebook_dim, 1024, kernel_size=3, padding=1),
+                nn.Conv2d(args.pq * args.codebook_dim, 1024, kernel_size=3, padding=1),
                 Normalize(1024),
                 nn.SiLU(),
                 nn.Conv2d(1024, 1024, kernel_size=3, padding=1),
