@@ -9,33 +9,44 @@ from einops import rearrange
 from torch import distributed as tdist
 from models.base_quantizer import VectorQuantizer, ProductQuantizer
 
+def _sample_rows(x, max_samples):
+    if x.size(0) <= max_samples:
+        return x
+    indices = torch.randperm(x.size(0), device=x.device)[:max_samples]
+    return x[indices]
+
+def _pairwise_sq_dists(x, y, sqrt_d):
+    d = x.pow(2).sum(dim=1, keepdim=True) + y.pow(2).sum(dim=1) - 2 * torch.matmul(x, y.t())
+    return d.clamp_min_(0).div(sqrt_d)
+
+def _sampled_gaussian_mmd_loss(z, codebook_weight, sqrt_d, max_samples):
+    z = _sample_rows(z.detach(), max_samples)
+    c = _sample_rows(codebook_weight, max_samples)
+    N = z.size(0) + c.size(0)
+
+    dxx = _pairwise_sq_dists(z, z, sqrt_d)
+    dxy = _pairwise_sq_dists(z, c, sqrt_d)
+    dyy = _pairwise_sq_dists(c, c, sqrt_d)
+
+    bandwidth = (dxx.sum() + 2 * dxy.sum() + dyy.sum()).detach() / max(N * N - N, 1)
+    bandwidth = bandwidth.clamp_min(1e-6)
+
+    XX = torch.exp(-dxx / bandwidth).mean() + torch.exp(-dxx / (2 * bandwidth)).mean()
+    XY = torch.exp(-dxy / bandwidth).mean() + torch.exp(-dxy / (2 * bandwidth)).mean()
+    YY = torch.exp(-dyy / bandwidth).mean() + torch.exp(-dyy / (2 * bandwidth)).mean()
+
+    return XX.detach() - 2 * XY + YY
+
 #### not the multi-scale quantizer and no residual quantization
 class MMDVectorQuantizer(VectorQuantizer):
     def __init__(self, args):
         super().__init__(args)
         self.args = args
         self.sqrt_d = math.sqrt(self.codebook_dim)
+        self.mmd_sample_size = getattr(args, "mmd_sample_size", 16384)
 
     def calc_gaussian_mmd_loss(self, z):
-        z = z.detach()
-        c = self.embedding.weight
-        N = z.size(0) + c.size(0)
-
-        dxx = (torch.sum(z.detach()**2, dim=1, keepdim=True) + torch.sum(z.detach()**2, dim=1) - 2*torch.matmul(z.detach(), z.detach().t())).div(self.sqrt_d)
-        dxy = (torch.sum(z.detach()**2, dim=1, keepdim=True) + torch.sum(c**2, dim=1) - 2*torch.matmul(z.detach(), c.t())).div(self.sqrt_d)
-        dyy = (torch.sum(c**2, dim=1, keepdim=True) + torch.sum(c**2, dim=1) - 2*torch.matmul(c, c.t())).div(self.sqrt_d)
-        bandwidth = (dxx.sum() + 2*dxy.sum() + dyy.sum()).detach() / (N**2 -N)
-
-        pxx = -dxx / bandwidth
-        pxy = -dxy / bandwidth
-        pyy = -dyy / bandwidth
-
-        XX = torch.exp(pxx).mean() + torch.exp(pxx/2).mean()
-        XY = torch.exp(pxy).mean() + torch.exp(pxy/2).mean()
-        YY = torch.exp(pyy).mean() + torch.exp(pyy/2).mean()
-
-        mmd_loss = XX.detach() - 2 * XY + YY
-        return mmd_loss
+        return _sampled_gaussian_mmd_loss(z, self.embedding.weight, self.sqrt_d, self.mmd_sample_size)
 
     def forward(self, z_enc):
         # reshape z_enc -> (batch, height, width, channel) and flatten

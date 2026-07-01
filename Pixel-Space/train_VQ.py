@@ -37,7 +37,7 @@ from eval_tokenizer import eval_one_epoch_vq
 
 from timm.scheduler import create_scheduler_v2 as create_scheduler
 from utils.distributed import init_distributed_mode
-from eval_reconstruction import eval_reconstruction
+from eval_reconstruction import eval_reconstruction, eval_reconstruction_epoch
 
 os.environ["TORCHDYNAMO_LOGLEVEL"] = "INFO"
 os.environ["TORCHDYNAMO_VERBOSE"] = "1" 
@@ -122,7 +122,8 @@ def main_worker(args):
             vq_model.train()
             checkpoint_path = os.path.join(args.checkpoint_dir, 'checkpoint-'+args.saver_name_pre+'-'+str(epoch)+'.pth.tar')
             save_checkpoint({'epoch': epoch, 'model': vq_model.module.state_dict(), 'optimizer': optimizer.state_dict(), 'args': args}, is_best=False, filename=checkpoint_path) 
-        
+            eval_reconstruction_epoch(args, vq_model, epoch)
+            
         if epoch % args.eval_epochs == 0:
             with torch.no_grad():
                 results_pack = eval_one_epoch_vq(args, vq_model, epoch, val_dataloader, len_val_set)

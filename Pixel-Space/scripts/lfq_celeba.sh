@@ -12,4 +12,4 @@
 
 module load gcc opencv/4.8.1
 source /home/sunset/environment/VQ-Tokenizer/bin/activate
-CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13583 train_SQ.py --VQ=lfq --dataset_name=CelebAHQ --global_batch_size=8  --L=2 --project_dim=16 --beta=1.0
+CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node=2 --master_port=13583 train_SQ.py --VQ=lfq --dataset_name=CelebAHQ --global_batch_size=4  --L=2 --project_dim=16 --beta=1.0
