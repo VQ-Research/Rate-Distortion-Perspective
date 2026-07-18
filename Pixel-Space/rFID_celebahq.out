@@ -1,0 +1,4 @@
+#################VQ method###########################
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_5
