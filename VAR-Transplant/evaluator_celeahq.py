@@ -11,29 +11,69 @@ from PIL import Image, ImageOps, ImageFilter
 import config
 from cleanfid import fid
 
-input_dir = "/projects/yuanai/projects/VQ-Transplant3/reconstruction/CelebAHQ"
-
-mmd_transplant_16384 = "/projects/yuanai/projects/VQ-Transplant3/reconstruction/Transplant/CelebAHQ/mmd_vq_transplant_16384_False"
-wasserstein_transplant_16384 = "/projects/yuanai/projects/VQ-Transplant3/reconstruction/Transplant/CelebAHQ/wasserstein_vq_transplant_16384_False"
-
-mmd_refinement_16384 = "/projects/yuanai/projects/VQ-Transplant3/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_16384_False"
-wasserstein_refinement_16384 = "/projects/yuanai/projects/VQ-Transplant3/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_16384_False"
-
+input_dir = "/project/6105494/shared/reconstruction/CelebAHQ"
 
 print("#################transplant-stage###########################")
-print(mmd_transplant_16384)
-FID = fid.compute_fid(mmd_transplant_16384, input_dir)
+vanilla_vq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/vanilla_vq_transplant_65536"
+ema_vq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/ema_vq_transplant_65536"
+online_vq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/online_vq_transplant_65536"
+wasserstein_vq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/wasserstein_vq_transplant_65536"
+
+vanilla_pq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/vanilla_vq_transplant_2"
+ema_pq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/ema_vq_transplant_2"
+online_pq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/online_vq_transplant_2"
+wasserstein_pq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/wasserstein_vq_transplant_2"
+mmd_pq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/mmd_vq_transplant_2"
+
+fsq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/fsq_transplant_8_4"
+bsq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/bsq_transplant_16_2"
+lfq_transplant = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Transplant/CelebAHQ/lfq_transplant_16_2"
+
+print(vanilla_vq_transplant)
+FID = fid.compute_fid(vanilla_vq_transplant, input_dir)
 print("FID: "+str(FID))
 
-print(wasserstein_transplant_16384)
-FID = fid.compute_fid(wasserstein_transplant_16384, input_dir)
+print(ema_vq_transplant)
+FID = fid.compute_fid(ema_vq_transplant, input_dir)
 print("FID: "+str(FID))
 
-print("#################Refinement-stage###########################")
-print(mmd_refinement_16384)
-FID = fid.compute_fid(mmd_refinement_16384, input_dir)
+print(online_vq_transplant)
+FID = fid.compute_fid(online_vq_transplant, input_dir)
 print("FID: "+str(FID))
 
-print(wasserstein_refinement_16384)
-FID = fid.compute_fid(wasserstein_refinement_16384, input_dir)
+print(wasserstein_vq_transplant)
+FID = fid.compute_fid(wasserstein_vq_transplant, input_dir)
 print("FID: "+str(FID))
+
+print(vanilla_pq_transplant)
+FID = fid.compute_fid(vanilla_pq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(ema_pq_transplant)
+FID = fid.compute_fid(ema_pq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(online_pq_transplant)
+FID = fid.compute_fid(online_pq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(wasserstein_pq_transplant)
+FID = fid.compute_fid(wasserstein_pq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(mmd_pq_transplant)
+FID = fid.compute_fid(mmd_pq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(fsq_transplant)
+FID = fid.compute_fid(fsq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(bsq_transplant)
+FID = fid.compute_fid(bsq_transplant, input_dir)
+print("FID: "+str(FID))
+
+print(lfq_transplant)
+FID = fid.compute_fid(lfq_transplant, input_dir)
+print("FID: "+str(FID))
+

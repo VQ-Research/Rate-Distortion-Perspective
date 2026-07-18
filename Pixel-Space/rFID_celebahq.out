@@ -2,3 +2,362 @@
 /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_5
 compute FID between two folders
 Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 21.786111501128175
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 13.543772695198243
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 10.199400492512439
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 9.598508513478777
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.79075376330286
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.44667846499999
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 11.414411900669876
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 9.754220242712961
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.939803592770716
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.577142996984378
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.100801813579039
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.510014757169131
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.860558352132273
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.1807529330598925
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.789475083314187
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.6223895216586754
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.9001454140748706
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.7545374716467563
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.343506029666713
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.0240563957456175
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.69285426090093
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.947170627486685
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.8751812598244726
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.638903994435509
+#################PQ method###########################
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 12.256336181692063
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.8712517324669875
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.693092903786038
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.610974547995454
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.956554693455132
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/vanilla_vq_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.9317609173342282
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 9.17561967843551
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.4044251882311585
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.429835762561481
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.231080921620958
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.372551909666441
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/ema_vq_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.432605836513176
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.694635787315889
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.834153052626277
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.63558302914862
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.501083202050609
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.186364450249272
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/online_vq_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.999766679337938
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.646486184906337
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.37843234957208
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.923764557091346
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.720016570773197
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.501678305886031
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/wasserstein_vq_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.208507178898316
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.100239007945618
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.608037156675522
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.709150788688362
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.209942478115096
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.295329946802042
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/mmd_vq_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.7668918848833073
+#################SQ method###########################
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.859689673083949
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.770199545065282
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.656701513709237
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.494484915473606
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.588955722734738
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/fsq_8_4_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.544416389454341
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 9.859552191402315
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.804567653305838
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.703070775959759
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.404517410923972
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.750604582675521
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/bsq_16_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.875504747552668
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 12.2566620613988
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 11.388205080671213
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 9.33991739155664
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.874245520407726
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 8.617311117687848
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/Pixel-Space/reconstruction/CelebAHQ/lfq_16_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.993206091108874
