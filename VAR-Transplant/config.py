@@ -36,7 +36,7 @@ def parse_arg():
     parser.add_argument('--alpha', type=float, default=1.0, help="transplant stage: the hyperparameter of code commit loss.")
     parser.add_argument('--beta', type=float, default=1.0, help="transplant stage: the hyperparameter of feature commit loss.")
     parser.add_argument('--gamma', type=float, default=0.5, help="transplant stage: wasserstein loss or mmd loss.")
-    parser.add_argument('--disc_weight', type=float, default=0.4, help="refinement stage: discriminator loss weight for gan training")
+    parser.add_argument('--disc_weight', type=float, default=0.5, help="refinement stage: discriminator loss weight for gan training")
     parser.add_argument('--lecam_loss_weight', type=float, default=0.001, help='refinement stage: lecam_loss_weight')
     parser.add_argument('--disc_cr_loss_weight', type=float, default=4.0, help='refinement stage: disc_cr_loss_weight')
 
