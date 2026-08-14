@@ -104,6 +104,7 @@ lfq_refinement_20 = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspec
 lfq_refinement_25 = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/lfq_refinement_16_2_25"
 lfq_refinement_30 = "/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/lfq_refinement_16_2_30"
 
+
 ###################################
 print(vanilla_vq_refinement_5)
 FID = fid.compute_fid(vanilla_vq_refinement_5, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
@@ -202,6 +203,31 @@ print("FID: "+str(FID))
 
 print(wasserstein_vq_refinement_30)
 FID = fid.compute_fid(wasserstein_vq_refinement_30, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
+print("FID: "+str(FID))
+
+########################################
+print(mmd_vq_refinement_5)
+FID = fid.compute_fid(mmd_vq_refinement_5, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
+print("FID: "+str(FID))
+
+print(mmd_vq_refinement_10)
+FID = fid.compute_fid(mmd_vq_refinement_10, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
+print("FID: "+str(FID))
+
+print(mmd_vq_refinement_15)
+FID = fid.compute_fid(mmd_vq_refinement_15, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
+print("FID: "+str(FID))
+
+print(mmd_vq_refinement_20)
+FID = fid.compute_fid(mmd_vq_refinement_20, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
+print("FID: "+str(FID))
+
+print(mmd_vq_refinement_25)
+FID = fid.compute_fid(mmd_vq_refinement_25, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
+print("FID: "+str(FID))
+
+print(mmd_vq_refinement_30)
+FID = fid.compute_fid(mmd_vq_refinement_30, dataset_name="ffhq", dataset_res=256,  mode="clean", dataset_split="trainval70k")
 print("FID: "+str(FID))
 
 #######################################
