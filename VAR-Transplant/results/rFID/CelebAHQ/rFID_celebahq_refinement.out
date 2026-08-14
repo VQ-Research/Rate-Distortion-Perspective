@@ -1,0 +1,391 @@
+#################refinement-stage###########################
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.620162811141768
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 7.776358869196201
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.4853923756105587
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.315441297705775
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.1334673812982885
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.802313543557034
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.091285688397676
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.374247111299951
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.343186729461678
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.4212838305666935
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.908752948630081
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.9379765731954137
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.989154626049128
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.720229457010049
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.2518918501270946
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.494875087232572
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.762276825426312
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.363419181669542
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 6.570729560110692
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.47814220833385
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.7947748466006885
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.5167492863131713
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.06133924704298
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.327767174342171
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.3049179870068315
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.345122144954473
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.2228744285716857
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.803710941439647
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.5591068512837296
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_65536_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 1.9611239008797838
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.186978697595606
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.624059040217304
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.774571136201132
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.623317460706005
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.863773698989462
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/vanilla_vq_refinement_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.8279155408407917
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.908024442170898
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.265722099503876
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.045154237356229
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.2009838431127378
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.5260563046028324
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/ema_vq_refinement_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.409058962867675
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.25521629353068
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.8956704972034117
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.6678908061103357
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.4103514823030423
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.619286612024638
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/online_vq_refinement_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.5600601882079843
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.7414347918699775
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.0978621596261746
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.66030344011088
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.9119895740464017
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.9304363809337417
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/wasserstein_vq_refinement_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.5165689579987713
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.413846632692724
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.836123032545231
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.4077053003473736
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.8040072994985508
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.4182113830925402
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/mmd_vq_refinement_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.040609951843692
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.092548628548911
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.5602369256491215
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.2463967726933447
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.205400711377848
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.7395134087648785
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/fsq_refinement_8_4_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.5644617671225944
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.8869249094250904
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.8862914295546034
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 2.472938584795827
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.3859685050241524
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.0460755958118
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/bsq_refinement_16_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 4.94264306117131
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_5
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_5
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.876395559234425
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_10
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_10
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.53364210976801
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_15
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_15
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.455545105848671
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_20
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_20
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.981485545475209
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_25
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_25
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 5.507822066204227
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_30
+compute FID between two folders
+Found 30000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/CelebAHQ/lfq_refinement_16_2_30
+Found 30000 images in the folder /project/6105494/shared/reconstruction/CelebAHQ
+FID: 3.350379473169596

@@ -1,0 +1,92 @@
+#################refinement-stage###########################
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_5
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_5
+FID: 2.9417867154396617
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_10
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_10
+FID: 2.3101944437336215
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_15
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_15
+FID: 2.652533967982947
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_20
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_20
+FID: 2.743910660925735
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_25
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_25
+FID: 2.7457509748750226
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_30
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/vanilla_vq_refinement_65536_30
+FID: 2.360077942629971
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_5
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_5
+FID: 2.4857164627815678
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_10
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_10
+FID: 1.7506495668493471
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_15
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_15
+FID: 1.8094553535864293
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_20
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_20
+FID: 1.7482703332803453
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_25
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_25
+FID: 1.97868763513884
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_30
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/ema_vq_refinement_65536_30
+FID: 1.5476756922805066
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_5
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_5
+FID: 2.062849713224068
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_10
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_10
+FID: 1.2188517616917807
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_15
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_15
+FID: 1.0566215650819686
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_20
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_20
+FID: 1.2810642819968052
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_25
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_25
+FID: 1.7783166131306984
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_30
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/online_vq_refinement_65536_30
+FID: 1.7176257412486393
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_5
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_5
+FID: 1.4073421009281901
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_10
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_10
+FID: 1.0607939293242907
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_15
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_15
+FID: 1.586756198738442
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_20
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_20
+FID: 1.387023792527998
+/project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_25
+compute FID of a folder with ffhq statistics
+Found 70000 images in the folder /project/6105494/sunset/VQ-Projects/Rate-Distortion-Perspective/VAR-Transplant/reconstruction/Refinement/FFHQ/wasserstein_vq_refinement_65536_25
