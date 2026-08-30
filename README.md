@@ -26,25 +26,7 @@
 
 ## Overview
 
-Discrete visual tokenization commonly uses vector quantization (VQ), product quantization (PQ), or scalar quantization (SQ), yet comparisons across independently trained tokenizers often mix changes in representation statistics, coding rate, architecture, data, and optimization. We introduce a unified rate–distortion framework that isolates the intrinsic effectiveness of the quantizer.
-
-For a tokenizer with (T) discrete tokens and a code space of cardinality (K), the nominal fixed-length coding rate is
-
-$$
-R = T\log_2 K.
-$$
-
-We measure distortion using expected squared quantization error:
-
-$$
-\mathcal{E} = \mathbb{E}\left[\left\lVert X-\mathcal{Q}(X)\right\rVert_{2}^{2}\right].
-$$
-
-This perspective addresses three questions:
-
-1. What should a quantization algorithm fundamentally optimize?
-2. What conditions are required for a fair intrinsic comparison of different quantization algorithms?
-3. Under these controlled conditions, how do VQ, PQ, and SQ compare in achievable distortion?
+We compare VQ, PQ, and SQ under matched latent distributions and coding rates to identify what quantizers should optimize and which family minimizes distortion.
 
 ## Highlights
 
