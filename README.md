@@ -101,8 +101,6 @@ The materials under `scripts/`, `results/`, `logs/`, and `record/` make the expe
 - **Reported results:** CSV files and metric logs contain the experimental results used in our analysis.
 - **Training records:** log and record files preserve the training process for inspecting individual runs.
 
-Before running a script, replace placeholders such as `<ACCOUNT>` and `/home/...` with the appropriate account name and local paths for your computing environment.
-
 ## Setup
 
 Create a Python environment with a CUDA-enabled PyTorch installation, then install the dependencies used by the selected experiment:
@@ -120,7 +118,7 @@ pip install torchvision timm einops omegaconf safetensors scipy pandas pillow \
   pytorch-image-generation-metrics
 ```
 
-All experiments use images resized to (256\times256). Dataset paths and pretrained-tokenizer paths are configured in the corresponding launch scripts.
+All experiments use images resized to 256 &times; 256. Dataset paths and pretrained-tokenizer paths are configured in the corresponding launch scripts.
 
 ## Running the Experiments
 
