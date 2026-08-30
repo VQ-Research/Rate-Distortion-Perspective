@@ -28,18 +28,9 @@
 
 We compare VQ, PQ, and SQ under matched latent distributions and coding rates to identify what quantizers should optimize and which family minimizes distortion.
 
-## Highlights
-
-- **Distortion is the primary objective.** Under mild conditions, a global distortion minimizer uses the full codebook, while full codebook utilization does not imply minimum distortion.
-- **Distortion controls optimization stability.** Lower quantization error tightens the bound on the gradient discrepancy induced by the straight-through estimator.
-- **Fair comparisons require two controls.** Quantizers must operate on the same latent distribution and at the same nominal fixed-length coding rate.
-- **VQ, PQ, and SQ form a hierarchy.** Since SQ is a special case of PQ and PQ is a special case of VQ, their optimal distortions satisfy (mathcal{E}^{*}_{\mathrm{VQ}}\leq\mathcal{E}^{*}_{\mathrm{PQ}}\leq\mathcal{E}^{*}_{\mathrm{SQ}}).
-- **VQ exploits intrinsic structure.** Joint vector quantization can adapt to low-dimensional source structure that fixed PQ and SQ factorizations may miss.
-- **The findings generalize.** Controlled experiments cover ImageNet-1K, FFHQ, and CelebA-HQ in latent space, plus CelebA-HQ in pixel space.
-
 ## Main Results
 
-All methods within an experimental setting use the same source representation and code-space cardinality. Latent-space experiments use (T=512) and (K=65{,}536). Pixel-space experiments use (T=4{,}096) and (K=65{,}536). Each metric below reports the best result within a quantizer family; the method attaining the lowest distortion may differ from the method attaining the lowest rFID.
+All methods within an experimental setting use the same source representation and code-space cardinality. Latent-space experiments use (T=512) and (K=65536). Pixel-space experiments use (T=4096) and (K=65536). Each metric below reports the best result within a quantizer family; the method attaining the lowest distortion may differ from the method attaining the lowest rFID.
 
 ### Best controlled results
 
@@ -78,10 +69,10 @@ Spearman rank correlations show that distortion tracks rFID more closely than co
 
 | Space | Dataset | Distortion vs. rFID | Utilization vs. rFID |
 |:--|:--|:--|:--|
-| Latent | ImageNet-1K | (ho=0.996, p<10^{-8}) | (ho=-0.540, p=0.057) |
-| Latent | FFHQ | (ho=0.979, p=5.49\times10^{-9}) | (ho=-0.492, p=0.088) |
-| Latent | CelebA-HQ | (ho=0.944, p=1.29\times10^{-6}) | (ho=-0.559, p=0.047) |
-| Pixel | CelebA-HQ | (ho=0.947, p=2.91\times10^{-6}) | (ho=-0.413, p=0.182) |
+| Latent | ImageNet-1K | &rho; = 0.996, p &lt; 10<sup>&minus;8</sup> | &rho; = &minus;0.540, p = 0.057 |
+| Latent | FFHQ | &rho; = 0.979, p = 5.49 &times; 10<sup>&minus;9</sup> | &rho; = &minus;0.492, p = 0.088 |
+| Latent | CelebA-HQ | &rho; = 0.944, p = 1.29 &times; 10<sup>&minus;6</sup> | &rho; = &minus;0.559, p = 0.047 |
+| Pixel | CelebA-HQ | &rho; = 0.947, p = 2.91 &times; 10<sup>&minus;6</sup> | &rho; = &minus;0.413, p = 0.182 |
 
 ## Repository Structure
 
@@ -144,7 +135,7 @@ cd Pixel-Space
 bash scripts/mmd_vq_celeba.sh
 ```
 
-Pixel-space experiments use PixelUnshuffle/PixelShuffle with shared convolutional projectors, (T=4{,}096) tokens, and (K=65{,}536).
+Pixel-space experiments use PixelUnshuffle/PixelShuffle with shared convolutional projectors, (T=4096) tokens, and (K=65536).
 
 ### Latent-space transplant comparison
 
@@ -155,7 +146,7 @@ cd VQ-Transplant
 bash scripts/transplant/ImageNet/mmd_pq.sh
 ```
 
-Latent-space experiments share the same pretrained VAR encoder output and use (T=512) tokens with (K=65{,}536). Quantizer substitution freezes the pretrained encoder and decoder; decoder adaptation then freezes the encoder and transplanted quantizer while updating the decoder.
+Latent-space experiments share the same pretrained VAR encoder output and use (T=512) tokens with (K=65536). Quantizer substitution freezes the pretrained encoder and decoder; decoder adaptation then freezes the encoder and transplanted quantizer while updating the decoder.
 
 ## Evaluation and Logs
 
