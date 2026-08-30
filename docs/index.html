@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A unified rate-distortion perspective for understanding and comparing vector, product, and scalar quantization.">
+  <meta name="theme-color" content="#f4f1ea">
+  <title>Unified Rate–Distortion Perspective</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      chtml: { scale: 1 }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Rate–Distortion home"><span>R</span>–<span>D</span> Perspective</a>
+    <nav aria-label="Primary navigation">
+      <a href="#perspective">Perspective</a>
+      <a href="#principles">Principles</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <h1>A Unified <span>Rate–Distortion</span> Perspective</h1>
+      <p class="dek">on Vector, Product, and Scalar Quantization</p>
+      <p class="authors">Xianghong Fang<sup>1</sup> · Wenlong Mou<sup>1</sup> · Yuan Yuan<sup>2</sup> · Dehan Kong<sup>1</sup> · Tim G. J. Rudner<sup>1,3</sup></p>
+      <p class="affiliations"><sup>1</sup>University of Toronto &nbsp; <sup>2</sup>Boston College &nbsp; <sup>3</sup>Vijil</p>
+      <div class="actions">
+        <a class="button dark" href="assets/Unified_Rate_Distortion_Perspective.pdf">Read paper <span>↗</span></a>
+        <a class="button" href="https://github.com/VQ-Research/Rate-Distortion-Perspective">Code <span>↗</span></a>
+        <a class="button" href="#citation">BibTeX <span>↓</span></a>
+      </div>
+      <div class="thesis">
+        <span class="question">Q1 What should a quantization algorithm fundamentally optimize?</span>
+        <span class="question">Q2 What conditions are required for a fair intrinsic comparison of different quantization algorithms?</span>
+        <span class="question">Q3 Under these controlled conditions, how do VQ, PQ, and SQ compare in achievable distortion?</span>
+      </div>
+      <p class="answer">In our paper, we show that distortion is the primary objective, fair comparison requires matched latent distributions and rates, and modern VQ methods reach the lowest distortion under these controls.</p>
+    </section>
+
+    <section id="perspective" class="section shell">
+      <div class="section-label">01 / Perspective</div>
+      <div class="section-head">
+        <h2>Quantization is<br>lossy compression.</h2>
+        <p>Discrete visual tokenizers compress continuous latent features into a finite set of symbols. Rate measures the representation budget. Distortion measures the information lost.</p>
+      </div>
+      <div class="equation-grid">
+        <article><span>Nominal fixed-length rate</span><div class="formula"><i>R</i> = <i>T</i> log<sub>2</sub> <i>K</i></div><p><i>T</i> is the token count and <i>K</i> is the discrete code-space cardinality.</p></article>
+        <article><span>Quantization distortion</span><div class="formula">\[\mathcal{E} = \mathbb{E}\!\left[\left\|X-\mathcal{Q}(X)\right\|_2^2\right]\]</div><p>Expected squared error measures the information removed by quantization.</p></article>
+      </div>
+      <p class="figure-setup">This lens resolves three linked questions: what to optimize, how to compare quantizers, and which family has the strongest intrinsic rate–distortion behavior.</p>
+      <figure class="paper-figure wide-figure">
+        <img src="assets/Figure1.png" alt="Overview of the unified rate-distortion perspective">
+        <figcaption>Figure 1. The unified perspective. (a) Distortion links optimization to codebook use, straight-through estimator stability, and reconstruction fidelity. (b) Intrinsic comparisons must match the latent distribution and nominal rate. (c) The nested structure SQ ⊆ PQ ⊆ VQ yields 𝓔*<sub>VQ</sub> ≤ 𝓔*<sub>PQ</sub> ≤ 𝓔*<sub>SQ</sub>.</figcaption>
+      </figure>
+      <p class="figure-readout">The three conclusions form one framework: optimize the quantity that measures information loss, control the factors that change it, then compare quantizer families at the same operating point.</p>
+    </section>
+
+    <section id="principles" class="section dark-section">
+      <div class="shell">
+        <div class="section-label">02 / Three principles</div>
+        <div class="principles">
+          <article><span>Q1</span><h3>Optimize distortion</h3><p>Under mild conditions, every global distortion minimizer uses the full codebook. The converse fails: full utilization alone does not guarantee minimum distortion.</p><div class="mini-equation">min 𝓔 ⇒ U = 1<br><small>but U = 1 ⇏ min 𝓔</small></div></article>
+          <article><span>Q2</span><h3>Control the comparison</h3><p>Latent scale changes squared distortion by <i>a</i><sup>2</sup>. Token count and code-space size set the rate. Both must be matched to isolate the quantizer.</p><div class="mini-equation">same <i>P</i>(<i>X</i>) · same <i>T</i> · same <i>K</i></div></article>
+          <article><span>Q3</span><h3>Respect the hierarchy</h3><p>VQ quantizes vectors jointly. PQ factorizes them into blocks. SQ factorizes every coordinate. Each constraint narrows the set of possible solutions.</p><div class="mini-equation">SQ ⊆ PQ ⊆ VQ</div></article>
+        </div>
+        <p class="central-claim">Distortion minimization is the fundamental criterion for intrinsic quantization effectiveness under a fixed rate.</p>
+      </div>
+    </section>
+
+    <section class="section shell split">
+      <div class="section-label">03 / Why VQ wins</div>
+      <div class="prose">
+        <h2>Joint structure<br>beats fixed factorization.</h2>
+        <p>VQ searches over arbitrary vector codebooks. PQ restricts each codeword to a Cartesian product of subcodebooks, while SQ applies that restriction coordinate by coordinate. The feasible sets are therefore nested.</p>
+        <p>When the source lies near a low-dimensional structure, VQ can adapt to its intrinsic dimension. Its distortion can scale as O(<i>K</i><sup>−2/<i>d</i><sub>eff</sub></sup>), while fixed PQ and SQ factorizations may remain tied to the ambient dimension.</p>
+        <div class="hierarchy" aria-label="Quantizer hierarchy">
+          <div class="vq"><b>VQ</b><span>joint vector codebook</span><div class="pq"><b>PQ</b><span>block-factorized</span><div class="sq"><b>SQ</b><span>coordinate-factorized</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section results-section">
+      <div class="shell">
+        <div class="section-label">04 / Controlled evaluation</div>
+        <div class="section-head">
+          <h2>Lower distortion,<br>better reconstruction.</h2>
+          <p>We compare matched-rate quantizers across three latent-space datasets and a controlled CelebA-HQ pixel-space setting.</p>
+        </div>
+        <div class="result-table expanded-table" role="table" aria-label="Best results by representation space, dataset, and quantizer family">
+          <div class="table-row table-head" role="row"><span>Family</span><span>Best Distortion Method</span><span>Best rFID Method</span><span>Distortion ↓</span><span>rFID ↓</span></div>
+
+          <div class="table-group" role="row"><strong>Latent space</strong><span>ImageNet-1K · T = 512 · K = 65,536</span></div>
+          <div class="table-row best" role="row"><b>VQ</b><span>MMD VQ</span><span>MMD VQ</span><strong>0.201</strong><strong>0.86</strong></div>
+          <div class="table-row" role="row"><b>PQ</b><span>EMA VP2</span><span>EMA VP2</span><strong>0.209</strong><strong>0.93</strong></div>
+          <div class="table-row" role="row"><b>SQ</b><span>BSQ</span><span>BSQ</span><strong>0.231</strong><strong>1.07</strong></div>
+
+          <div class="table-group" role="row"><strong>Latent space</strong><span>FFHQ · T = 512 · K = 65,536</span></div>
+          <div class="table-row best" role="row"><b>VQ</b><span>MMD VQ</span><span>MMD VQ</span><strong>0.131</strong><strong>0.85</strong></div>
+          <div class="table-row" role="row"><b>PQ</b><span>EMA VP2</span><span>EMA VP2</span><strong>0.136</strong><strong>1.05</strong></div>
+          <div class="table-row" role="row"><b>SQ</b><span>BSQ</span><span>BSQ</span><strong>0.155</strong><strong>1.54</strong></div>
+
+          <div class="table-group" role="row"><strong>Latent space</strong><span>CelebA-HQ · T = 512 · K = 65,536</span></div>
+          <div class="table-row best" role="row"><b>VQ</b><span>Wasserstein VQ / MMD VQ</span><span>Wasserstein VQ</span><strong>0.111</strong><strong>1.73</strong></div>
+          <div class="table-row" role="row"><b>PQ</b><span>EMA VP2</span><span>EMA VP2</span><strong>0.115</strong><strong>1.96</strong></div>
+          <div class="table-row" role="row"><b>SQ</b><span>BSQ</span><span>FSQ</span><strong>0.133</strong><strong>2.24</strong></div>
+
+          <div class="table-group pixel" role="row"><strong>Pixel space</strong><span>CelebA-HQ · T = 4,096 · K = 65,536</span></div>
+          <div class="table-row best" role="row"><b>VQ</b><span>MMD VQ</span><span>MMD VQ</span><strong>0.0021</strong><strong>3.64</strong></div>
+          <div class="table-row" role="row"><b>PQ</b><span>Online VP2 / MMD VP2</span><span>MMD VP2</span><strong>0.0023</strong><strong>3.77</strong></div>
+          <div class="table-row" role="row"><b>SQ</b><span>FSQ</span><span>FSQ</span><strong>0.0032</strong><strong>4.54</strong></div>
+        </div>
+        <p class="table-note">Each metric reports the best result within a quantizer family. Latent-space rFID is measured after decoder adaptation; pixel-space models use single-stage training.</p>
+        <p class="figure-setup">The family-level comparison stays consistent as the per-token coding budget changes.</p>
+        <figure class="paper-figure rd-figure">
+          <img src="assets/RD_curve.png" alt="Rate-distortion curves on ImageNet-1K">
+          <figcaption>Figure 2. Rate–distortion curves on ImageNet-1K. Each point reports the lowest distortion among the evaluated methods in a family at the corresponding nominal per-token rate log<sub>2</sub> K.</figcaption>
+        </figure>
+        <p class="figure-readout">More rate lowers distortion for every family, yet the ordering persists at every evaluated point: VQ achieves the lowest distortion, followed by PQ and SQ.</p>
+        <div class="correlation" role="table" aria-label="Spearman correlations with reconstruction fidelity">
+          <div class="correlation-row correlation-head" role="row"><span>Representation and Dataset</span><span>Distortion vs. rFID</span><span>Utilization vs. rFID</span></div>
+          <div class="correlation-row" role="row"><b>Latent · ImageNet-1K</b><span><strong>ρ = 0.996</strong><small>p &lt; 10<sup>−8</sup></small></span><span><strong>ρ = −0.540</strong><small>p = 0.057</small></span></div>
+          <div class="correlation-row" role="row"><b>Latent · FFHQ</b><span><strong>ρ = 0.979</strong><small>p = 5.49 × 10<sup>−9</sup></small></span><span><strong>ρ = −0.492</strong><small>p = 0.088</small></span></div>
+          <div class="correlation-row" role="row"><b>Latent · CelebA-HQ</b><span><strong>ρ = 0.944</strong><small>p = 1.29 × 10<sup>−6</sup></small></span><span><strong>ρ = −0.559</strong><small>p = 0.047</small></span></div>
+          <div class="correlation-row" role="row"><b>Pixel · CelebA-HQ</b><span><strong>ρ = 0.947</strong><small>p = 2.91 × 10<sup>−6</sup></small></span><span><strong>ρ = −0.413</strong><small>p = 0.182</small></span></div>
+        </div>
+        <p class="correlation-readout">Distortion tracks reconstruction fidelity far more closely than codebook utilization across representation spaces and datasets.</p>
+      </div>
+    </section>
+
+    <section class="section shell takeaways">
+      <div class="section-label">05 / Takeaways</div>
+      <ol>
+        <li><span class="takeaway-copy"><span class="takeaway-line">Treat quantization as lossy compression with rate R = T log<sub>2</sub> K</span> and squared quantization error as distortion.</span></li>
+        <li>Minimize distortion first, because optimal distortion implies full codebook use while full use does not imply optimal distortion.</li>
+        <li>Match latent distributions, token counts, and composite code-space cardinalities before comparing quantizer families.</li>
+        <li>Modern VQ methods achieve the lowest controlled distortion and exploit low-dimensional source structure that fixed factorizations can miss.</li>
+      </ol>
+    </section>
+
+    <section id="citation" class="section citation">
+      <div class="shell">
+        <div class="section-label">06 / Citation</div>
+        <div class="citation-head"><h2>Build on our work.</h2><a href="https://github.com/VQ-Research/Rate-Distortion-Perspective">View code ↗</a></div>
+        <pre><code id="bibtex-code">@article{Fang2026ratedistortion,
+  title   = {A Unified Rate--Distortion Perspective on Vector,
+             Product, and Scalar Quantization},
+  author  = {Fang, Xianghong and Mou, Wenlong and Yuan, Yuan and
+             Kong, Dehan and Rudner, Tim G. J.},
+  journal = {arXiv},
+  year    = {2026}
+}</code></pre>
+        <button class="copy-button" id="copy-bibtex" type="button">Copy BibTeX</button>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell"><span>Unified Rate–Distortion Perspective · 2026</span><a href="#top">Back to top ↑</a></div></footer>
+  <script>
+    const button = document.getElementById('copy-bibtex');
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(document.getElementById('bibtex-code').textContent);
+        button.textContent = 'Copied!';
+        setTimeout(() => button.textContent = 'Copy BibTeX', 1800);
+      } catch { button.textContent = 'Copy failed'; }
+    });
+  </script>
+</body>
+</html>
