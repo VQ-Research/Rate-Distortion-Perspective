@@ -37,7 +37,7 @@ $$
 We measure distortion using expected squared quantization error:
 
 $$
-\mathcal{E}=\mathbb{E}\left[\left|X-\mathcal{Q}(X)\right|_2^2\right].
+\mathcal{E} = \mathbb{E}\left[\left\lVert X-\mathcal{Q}(X)\right\rVert_{2}^{2}\right].
 $$
 
 This perspective addresses three questions:
