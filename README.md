@@ -6,14 +6,11 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-Preprint-b31b1b.svg)](docs/assets/Unified_Rate_Distortion_Perspective.pdf)
 [![Project Page](https://img.shields.io/badge/Project-Page-3b6ea8.svg)](https://vq-research.github.io/Rate-Distortion-Perspective/)
-[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](docs/assets/Unified_Rate_Distortion_Perspective.pdf)
-[![Code](https://img.shields.io/badge/Code-GitHub-181717.svg)](https://github.com/VQ-Research/Rate-Distortion-Perspective)
+[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://vq-research.github.io/Rate-Distortion-Perspective/assets/Unified_Rate_Distortion_Perspective.pdf)
 
 **[Xianghong Fang](https://sunset-clouds.github.io/)<sup>1</sup> · Wenlong Mou<sup>1</sup> · Yuan Yuan<sup>2</sup> · Dehan Kong<sup>1</sup> · Tim G. J. Rudner<sup>1,3</sup>**
 
 <sup>1</sup>University of Toronto &nbsp;&nbsp; <sup>2</sup>Boston College &nbsp;&nbsp; <sup>3</sup>Vijil
-
-**arXiv preprint**
 
 </div>
 
@@ -24,7 +21,7 @@
     <img src="docs/assets/Figure1.png" width="100%" alt="Overview of the unified rate-distortion perspective">
   </a>
   <br>
-  <sub>Overview of the unified rate–distortion perspective. Click the figure to open the original PDF.</sub>
+  <big><big>Overview of the unified rate–distortion perspective.</big></big>
 </p>
 
 ## Overview
@@ -40,7 +37,7 @@ $$
 We measure distortion using expected squared quantization error:
 
 $$
-\mathcal{E}=\mathbb{E}\left[\left\|X-\mathcal{Q}(X)\right\|_2^2\right].
+\mathcal{E}=\mathbb{E}\left[\left|X-\mathcal{Q}(X)\right|_2^2\right].
 $$
 
 This perspective addresses three questions:
@@ -88,7 +85,7 @@ Latent-space rFID is measured after decoder adaptation. Pixel-space models use s
     <img src="docs/assets/RD_curve.png" width="62%" alt="Rate-distortion curves on ImageNet-1K">
   </a>
   <br>
-  <sub>Rate–distortion curves on ImageNet-1K. Click the figure to open the original PDF.</sub>
+  <sub>Rate–distortion curves on ImageNet-1K.</sub>
 </p>
 
 Increasing the per-token coding rate reduces distortion for all three quantization families. VQ achieves the lowest distortion at every evaluated operating point, followed by PQ and SQ.
